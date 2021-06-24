@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { MenuHeadComponent } from './menu-head-folder/menu-head/menu-head.component';
 import { MenuLeftComponent } from './menu-left-folder/menu-left/menu-left.component';
 import { ArticleComponent } from './article-Folder/article/article.component';
+import { OffreEmploiComponent } from './OffreEmploi-Folder/offre-emploi/offre-emploi.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuHeadComponent,
     MenuLeftComponent,
-    ArticleComponent
+    ArticleComponent,
+    OffreEmploiComponent
   ],
   imports: [
     BrowserModule,
