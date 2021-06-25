@@ -7,6 +7,8 @@ import { MenuHeadComponent } from './menu-head-folder/menu-head/menu-head.compon
 import { MenuLeftComponent } from './menu-left-folder/menu-left/menu-left.component';
 import { ArticleComponent } from './article-Folder/article/article.component';
 import { OffreEmploiComponent } from './OffreEmploi-Folder/offre-emploi/offre-emploi.component';
+import { FooterComponent } from './footer-folder/footer/footer.component';
+import { EquipeComponent } from './equipe-Folder/equipe/equipe.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { OffreEmploiComponent } from './OffreEmploi-Folder/offre-emploi/offre-em
     MenuHeadComponent,
     MenuLeftComponent,
     ArticleComponent,
-    OffreEmploiComponent
+    OffreEmploiComponent,
+    FooterComponent,
+    EquipeComponent
   ],
   imports: [
     BrowserModule,
