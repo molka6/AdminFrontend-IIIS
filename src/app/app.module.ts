@@ -9,6 +9,9 @@ import { ArticleComponent } from './article-Folder/article/article.component';
 import { OffreEmploiComponent } from './OffreEmploi-Folder/offre-emploi/offre-emploi.component';
 import { FooterComponent } from './footer-folder/footer/footer.component';
 import { EquipeComponent } from './equipe-Folder/equipe/equipe.component';
+import { CreateArticleComponent } from './article-folder/create-article/create-article.component';
+import { DashboardComponent } from './dashboard-folder/dashboard/dashboard.component';
+import { CreateOffreEmploiComponent } from './offreEmploi-folder/create-offre-emploi/create-offre-emploi.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { EquipeComponent } from './equipe-Folder/equipe/equipe.component';
     ArticleComponent,
     OffreEmploiComponent,
     FooterComponent,
-    EquipeComponent
+    EquipeComponent,
+    CreateArticleComponent,
+    DashboardComponent,
+    CreateOffreEmploiComponent
   ],
   imports: [
     BrowserModule,

@@ -1,16 +1,59 @@
 <div class="container-scroller">
-    <div class="container-fluid page-body-wrapper">
-      <app-menu-head></app-menu-head>
-      <div class="main-panel">
-            <div class="content-wrapper">   
-              <h1>It’s useful to point out that love, itself, is neutral. It is something that can be both healthy or unhealthy, helpful or harmful, depending on why and how you love someone else and are loved by someone else. By itself, love is never enough to sustain a relations</h1>
+  <div class="container-fluid page-body-wrapper">
+    <app-menu-head></app-menu-head>
+    <div class="main-panel">
+            <div class="content-wrapper">  
+              <div class="row page-title-header margi">
+                <div class="col-12">
+                   <div class="page-header">
+                       <h4 class="page-title ">Offres d'emploi </h4>
+                   </div>
+                  </div>
+
+             </div>
+                <!-- ************Table ************* -->
+                <div class="col-lg-12  stretch-card ">
+                  <div class="card">
+                    <div class="card-body">
+                      <h4 class="card-title">Liste des offres d'emploi:</h4>
+
+
+                    <div  class="row">
+                    <div  class="col-md-10">
+                  
+                    </div>
+                    <div  class="col-md-2">
+                    <button type="button" class="btn btn-inverse-danger btn-rounded btn-fw m1" routerLink="/CreateOffreEmploi">Ajouter</button>
+                    </div>
+                    </div>
+
+                      <!-- <p class="card-description"> Add class <code>.table-striped</code> </p> -->
+                      <table class="table table-striped">
+                        <thead>
+                          <tr>
+                            <th> Titre</th>
+                            <th> Description </th>
+                            <th> Image </th>
+                            <th> Date Ajoiut </th>
+                            <th> Action </th>
+                          </tr>
+                        </thead>
+
+
+                        <tbody>
+
+                          
+                        </tbody>
+
+
+
+                      </table>
+                    </div>
+                  </div>
+                </div>  
+              <!-- ******endtable************* -->
             </div>   
-            
-            
-
-
             <app-footer></app-footer>
-       
-      </div>
     </div>
+  </div>             
 </div>
