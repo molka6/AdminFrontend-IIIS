@@ -12,7 +12,7 @@ import { EquipeComponent } from './equipe-Folder/equipe/equipe.component';
 import { CreateArticleComponent } from './article-folder/create-article/create-article.component';
 import { DashboardComponent } from './dashboard-folder/dashboard/dashboard.component';
 import { CreateOffreEmploiComponent } from './offreEmploi-folder/create-offre-emploi/create-offre-emploi.component';
-
+import { FormsModule ,FormGroup } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,8 +27,12 @@ import { CreateOffreEmploiComponent } from './offreEmploi-folder/create-offre-em
     CreateOffreEmploiComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
+    // FormGroup
+
+  
     
   ],
   providers: [],
