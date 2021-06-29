@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { HttpClient } from '@angular/common/http';
+
 import axios  from 'axios';
 
 @Injectable({
@@ -11,7 +11,7 @@ export class ArticleService {
   url = 'http://localhost:8000';
 
 
-  constructor(private http : HttpClient ,private  headers : Headers) { }
+  constructor() { }
 
 
  async getArticles() {

@@ -11,7 +11,7 @@ import { CreateOffreEmploiComponent } from './offreEmploi-folder/create-offre-em
 
 const routes: Routes = [
 { path: '', component:DashboardComponent},
-{ path: 'Articles', component: ArticleComponent},
+{ path: 'article', component: ArticleComponent},
 { path: 'OffreEmploi', component:OffreEmploiComponent},
 { path: 'EquipeIIS', component:EquipeComponent},
 { path: 'CreateArticle', component:CreateArticleComponent},
