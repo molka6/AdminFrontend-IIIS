@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import {EquipeService , Post} from '../equipe.service' ;
+import {EquipeService} from '../equipe.service' ;
 import {FormGroup, FormControl, Validators} from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 @Component({
@@ -38,15 +38,14 @@ export class UpdateFormComponent implements OnInit {
     });
   });
   }
-  async editPost(_nom , _prenom,_role, _Email) {
-    let post ; 
-    post = {nom: _nom=this.articleform.get('nom').value,  
+  async update(_nom , _prenom,_role, _Email) {
+    let equipe ; 
+    equipe = {nom: _nom=this.articleform.get('nom').value,  
     prenom :_prenom=this.articleform.get('prenom').value ,
     role :_role=this.articleform.get('role').value ,
     Email :_Email=this.articleform.get('Email').value 
   };
-  console.log(post); 
-      this._updateService.updatePost(post,this.id).subscribe(( result => {
+      this._updateService.updatePost(equipe,this.id).subscribe(( result => {
         this.router.navigate(['/EquipeIIS']);
       }), addError => this.errors = addError);
     }
