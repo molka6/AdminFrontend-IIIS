@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ArticleComponent } from './article-Folder/article/article.component';
 import { OffreEmploiComponent } from './OffreEmploi-Folder/offre-emploi/offre-emploi.component';
 import { EquipeComponent } from './equipe-Folder/equipe/equipe.component';
-import { CreateArticleComponent } from './article-folder/create-article/create-article.component';
+
 import { DashboardComponent } from './dashboard-folder/dashboard/dashboard.component';
 import { FormsModule } from '@angular/forms';
 import { UpdateOffreComponent } from './OffreEmploi-Folder/update-offre/update-offre.component';
@@ -17,11 +16,10 @@ import { CreateServiceComponent } from './IIS-Services-Folder/create-service/cre
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
-  { path: 'article', component: ArticleComponent },
   { path: 'OffreEmploi', component: OffreEmploiComponent },
   { path: 'OffreEmploi/:id', component: OffreEmploiComponent },
   { path: 'EquipeIIS', component: EquipeComponent },
-  { path: 'CreateArticle', component: CreateArticleComponent },
+  { path: 'CreateArticle', component: CreateServiceComponent },
   { path: 'CreateOffreEmploi', component: CreateOffreComponent },
   { path: 'UpdateOffre/:id', component: UpdateOffreComponent },
   { path: 'Partenaire', component: PartenaireComponent },

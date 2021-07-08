@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EquipeService ,Equipe} from './equipe.service';
 
 @Component({
   selector: 'app-equipe',
@@ -6,10 +7,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./equipe.component.css']
 })
 export class EquipeComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
+   equipe :Equipe[];
+  constructor(private equipeService :EquipeService   ) { }
+  async ngOnInit() {
+    this.equipeService
+    .getpersonnes()
+    .subscribe((data:Equipe[]) => {
+      this.equipe=data;
+    });
   }
 
-}
+  deletePost(id) {
+    this.equipeService.deletetPersonne(id).subscribe(
+     result => {
+       window.location.reload();
+     }
+    );
+  }
+
+
+
+  }
+  
