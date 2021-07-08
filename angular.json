@@ -12,12 +12,16 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
+
           "options": {
             "outputPath": "dist/AdminFrontend",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
+            
+
+
             "aot": true,
             "assets": [
               "src/favicon.ico",
@@ -58,11 +62,17 @@
               ]
             }
           }
+        
+        
+        
+        
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "AdminFrontend:build"
+           
+            "browserTarget": "AdminFrontend:build",
+            "proxyConfig": "proxy.conf.json"
           },
           "configurations": {
             "production": {
@@ -119,6 +129,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "AdminFrontend"
+    }
+  },
+  "defaultProject": "AdminFrontend",
+  "cli": {
+    "analytics": "c9f43d6d-8b6a-4b1e-bf5f-2a72264f7c10"
+  }
 }

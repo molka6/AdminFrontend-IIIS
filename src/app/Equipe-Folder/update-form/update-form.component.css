@@ -1,0 +1,11 @@
+.form-control{
+    border: solid 1px #dde4eb;
+    border-radius: 30px; 
+}
+.margin{
+    margin-top: 64px;
+}
+button{
+float: right;
+margin: 8px;
+}
