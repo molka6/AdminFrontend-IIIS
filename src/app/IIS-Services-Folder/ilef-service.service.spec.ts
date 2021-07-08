@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ArticleService } from './article.service';
+import { IlefServiceService } from './ilef-service.service';
 
-describe('ArticleService', () => {
-  let service: ArticleService;
+describe('IlefServiceService', () => {
+  let service: IlefServiceService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(ArticleService);
+    service = TestBed.inject(IlefServiceService);
   });
 
   it('should be created', () => {
