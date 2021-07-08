@@ -12,6 +12,9 @@ import { EquipeComponent } from './equipe-Folder/equipe/equipe.component';
 // import { CreateArticleComponent } from './article-folder/create-article/create-article.component';
 import { DashboardComponent } from './dashboard-folder/dashboard/dashboard.component';
 import { CreateOffreEmploiComponent } from './offreEmploi-folder/create-offre-emploi/create-offre-emploi.component';
+
+import { FormsModule ,FormGroup } from '@angular/forms';
+
 import { ReactiveFormsModule,FormsModule } from '@angular/forms'; 
 import { HttpModule } from '@angular/http';
 import { EquipeFormComponent } from './Equipe-Folder/equipe-form/equipe-form.component';
@@ -20,6 +23,7 @@ import { EquipeFormComponent } from './Equipe-Folder/equipe-form/equipe-form.com
 import { ArticleComponent } from './article-folder/article/article.component';
 import { ArticleFormComponent } from './article-folder/article-form/article-form.component';
 import { UpdateFormComponent } from './Equipe-folder/update-form/update-form.component';
+
 
 
 @NgModule({
@@ -41,11 +45,17 @@ import { UpdateFormComponent } from './Equipe-folder/update-form/update-form.com
    
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
-    FormsModule, 
+
+
+  
+
+
     ReactiveFormsModule,
     HttpModule,
+
     
  
   ],

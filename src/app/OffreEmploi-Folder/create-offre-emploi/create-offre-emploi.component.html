@@ -19,18 +19,18 @@
                       <div class="card-body">
                          <h4 class="card-title2">Ajouter un Article</h4>
                               <!-- @@@@@@form@@@@@ -->
-                              <form>
+                              <form  >
                                 <div class="row">
                                   <div class="col-md-6 pr-1">
                                     <div class="form-group">
                                       <label>Titre</label>
-                                      <input type="text" class="form-control" placeholder="Company" value="Mike">
+                                      <input formControlName="titre" type="text" class="form-control" placeholder="Company" value="Mike">
                                     </div>
                                   </div>
                                   <div class="col-md-6 pl-1">
                                     <div class="form-group">
                                       <label>Date Ajout</label>
-                                      <input type="text" class="form-control" placeholder="Last Name" value="Andrew">
+                                      <input formControlName="date_ajout"  type="text" class="form-control" placeholder="Last Name" value="Andrew">
                                     </div>
                                   </div>
                                 </div>
@@ -39,14 +39,14 @@
                                   <div class="col-md-12">
                                     <div class="form-group">
                                       <label>Description </label>
-                                      <textarea rows="4" cols="80" class="form-control" placeholder="Here can be your description" value="Mike">Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.</textarea>
+                                      <textarea formControlName="description"  rows="4" cols="80" class="form-control" placeholder="Here can be your description" value="Mike">Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.</textarea>
                                     </div>
                                   </div>
                                 </div>
                                 <div class="row">
                                   <div class="col-md-12">
                                <button type="button" class="btn btn-secondary btn-rounded btn-fw " routerLink="/OffreEmploi" >Cancel</button>
-                               <button type="button" class="btn btn-danger btn-rounded btn-fw ">Submit</button>
+                               <button type="submit"  class="btn btn-danger btn-rounded btn-fw ">Submit</button>
                               </div>
                                 </div>
                               </form>
