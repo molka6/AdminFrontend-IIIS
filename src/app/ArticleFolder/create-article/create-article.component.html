@@ -6,7 +6,7 @@
                 <div class="row page-title-header margi">
                     <div class="col-12">
                         <div class="page-header">
-                            <h4 class="page-title ">Ilef InfoService Services </h4>
+                            <h4 class="page-title ">Articles </h4>
                             <div class="quick-link-wrapper w-100 d-md-flex flex-md-wrap">
                             </div>
                         </div>
@@ -17,41 +17,54 @@
                 <div class="col-lg-12  stretch-card2 ">
                     <div class="card2">
                         <div class="card-body">
-                            <h4 class="card-title2">Ajouter un Service </h4>
+                            <h4 class="card-title2">Ajouter un Article </h4>
                             <!-- @@@@@@form@@@@@ -->
-                            <form [formGroup]="formService">
+                            <form [formGroup]="formArticle">
                                 <div class="row">
                                     <div class="col-md-6 pr-1">
                                         <div class="form-group">
-                                            <label>titre</label>
+                                            <label>Titre</label>
+
                                             <input formControlName="titre" type="text" class="form-control"
-                                                placeholder="titre" value="">
+                                                placeholder='titre' value="">
                                         </div>
                                     </div>
-
-                                </div>
-
-
-                                <div class="row">
-                                    <div class="col-md-12 pr-1">
+                                    <div class="col-md-6 pl-1">
                                         <div class="form-group">
-                                            <label>description</label>
+                                            <label>Date Ajout</label>
 
-                                            <textarea formControlName="description" rows="4" cols="80"
-                                                class="form-control" value="Description">Description </textarea>
+                                            <input formControlName="dateAjout" type="date" class="form-control">
+
                                         </div>
                                     </div>
-
                                 </div>
-
 
                                 <div class="row">
                                     <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>image</label>
+                                            <input formControlName="image" placeholder='image' type="text"
+                                                class="form-control">
 
-                                        <button type="button" class="btn btn-secondary btn-rounded btn-fw  btn-position"
-                                            routerLink="/Services">Cancel</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Description </label>
+                                            <textarea formControlName="description" rows="4" cols="80"
+                                                class="form-control" value="Mike">Description </textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+
+                                        <button type="button" class="btn btn-secondary btn-rounded btn-fw btn-position "
+                                            routerLink="/Articles">Cancel</button>
                                         <button class="btn btn-danger btn-rounded btn-fw btn-position "
-                                            (click)="submitService($event)" type="submit">Submit</button>
+                                            (click)="submitArticle($event)" type="submit">Submit</button>
 
                                     </div>
                                 </div>
