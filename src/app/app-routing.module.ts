@@ -18,6 +18,11 @@ import { UpdateServiceComponent } from './IIS-Services-Folder/update-service/upd
 import { ArticleComponent } from './ArticleFolder/article/article.component';
 import { CreateArticleComponent } from './ArticleFolder/create-article/create-article.component';
 
+
+import { MembreComponent } from './membre-Folder/membre/membre.component';
+
+
+
 const routes: Routes = [
   { path: '', component: DashboardComponent },
   { path: 'OffreEmploi', component: OffreEmploiComponent },
@@ -33,10 +38,17 @@ const routes: Routes = [
   { path: 'UpdateOffre/:id', component: UpdateOffreComponent },
   { path: 'UpdateEquipe/:id', component: UpdateEquipeComponent },
   { path: 'Equipe', component: EquipeComponent },
+
   { path: 'createEquipe', component: EquipeFormComponent },
   { path: 'UpdateService/:id', component: UpdateServiceComponent },
   { path: 'Articles', component: ArticleComponent },
   { path: 'CreateArticle', component: CreateArticleComponent },
+
+
+  { path: 'createEquipe', component:EquipeFormComponent },
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+  { path: 'membre', component:MembreComponent },
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 
 ];
