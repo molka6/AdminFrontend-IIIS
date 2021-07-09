@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+
 import {EquipeService  ,Equipe} from '../equipe.service' ;
+
 @Component({
   selector: 'app-equipe',
   templateUrl: './equipe.component.html',
@@ -14,6 +16,7 @@ export class EquipeComponent implements OnInit {
     .subscribe((data:Equipe[]) => {
       this.equipe=data;
     });
+
   }
 
   deletePost(id) {
@@ -25,3 +28,9 @@ export class EquipeComponent implements OnInit {
     );
   }
 }
+
+
+  
+
+  }
+  

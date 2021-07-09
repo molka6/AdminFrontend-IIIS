@@ -16,6 +16,7 @@
                     <div class="card">
                         <div class="card-body">
                             <h4 class="card-title">Liste des Partenaires:</h4>
+
                             <div class="row">
                                 <div class="col-md-10">
 
@@ -25,21 +26,26 @@
                                         routerLink="/CreatePartenaire">Ajouter</button>
                                 </div>
                             </div>
+
+
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
                                         <th> nom </th>
                                         <th> logo</th>
+
                                         <th  rowspan="2" > 
                                             <div class="position">Action </div></th>
                                       
                                     </tr>
                                 </thead>
+
                                 <tbody>
                                     <tr *ngFor="let partenaire of  PartenaireListe ">
 
                                         <td class="py-1"> {{ partenaire.nom}} </td>
                                         <td> {{ partenaire.logo}} </td>
+
                                         <td class="py-2">
                                             <button type="button" class="btn btn-outline-secondary btn-rounded btn-fw m"
                                             [routerLink]="[dynamicParameter]" (click)="deletePartenaire(partenaire)">Supprimer</button>
@@ -49,6 +55,7 @@
                                             </td> 
                                     </tr>
                                 </tbody>
+
                             </table>
                         </div>
                     </div>
