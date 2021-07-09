@@ -34,9 +34,15 @@
                                     <tr>
                                         <th> Titre</th>
                                         <th> Description </th>
-                                        <th> Action</th>
 
-                                    </tr>
+                                        <th  rowspan="2" > 
+                                            <div class="position">Action </div></th>
+
+
+                                        </tr>
+
+                                  
+
                                 </thead>
 
 
@@ -46,19 +52,18 @@
                                         <td class="py-1"> {{ Service.title}} </td>
                                         <td> {{ Service.description}} </td>
 
-                                        <td class="icon2">
-                                            <a href="/UpdateOffre/{Service.id}}">
+                                <td class="py-2">
+                      <button type="button" class="btn btn-outline-secondary btn-rounded btn-fw m"
+                      [routerLink]="[dynamicParameter]" (click)="deleteOffre(offre)">Supprimer</button>
 
-                                                modifier
-
-                                            </a>
-                                            <a [routerLink]="[dynamicParameter]" (click)="deleteOffre(offre)">
-                                                supprimer
+                      <button type="button" class="btn btn-outline-secondary btn-rounded btn-fw m" 
+                      routerLink="/UpdateOffre/{Service.id}}"> Modifier </button>
+                      </td> 
 
 
-                                            </a>
 
-                                        </td>
+                               
+
                                     </tr>
 
                                 </tbody>

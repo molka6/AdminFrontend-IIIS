@@ -35,7 +35,10 @@
                     <th> Titre</th>
                     <th> Description </th>
                     <th> Date Ajoiut </th>
-                    <th> Action </th>
+
+                    <th  rowspan="2" > 
+                      <div class="position">Action </div></th>
+
                   </tr>
                 </thead>
 
@@ -44,27 +47,18 @@
                   <tr *ngFor="let offre of  offreEmploiListe ">
 
                     <td class="py-1"> {{ offre.title}} </td>
-                    <td> {{ offre.description}} </td>
+                    <td class="py-4"> {{ offre.description}} </td>
                     <td class="py-1"> {{ offre.DateAjout}}</td>
-                    <td class="icon2">
-                      <a href="/UpdateOffre/{{offre.id}}">
-                        <!-- <i style="padding: 15px; "
-                          class="fa-trash-o  fa ico1"></i>  -->
-                        modifier
+                    <td class="py-2">
+                    
+                      <button type="button" class="btn btn-outline-secondary btn-rounded btn-fw m"
+                      [routerLink]="[dynamicParameter]" (click)="deleteOffre(offre)">Supprimer</button>
 
-                      </a>
-                      <a [routerLink]="[dynamicParameter]" (click)="deleteOffre(offre)">
-                        supprimer
-                        <!-- <i style="padding: 15px; " class="fa fa-edit ico2"> -->
-
-                      </a>
-
-                    </td>
-                  </tr>
-
-                </tbody>
-
-
+                      <button type="button" class="btn btn-outline-secondary btn-rounded btn-fw m" 
+                      routerLink="/UpdateOffre/{{offre.id}}"> Modifier </button>
+                      </td> 
+                   </tr>
+                    </tbody>
 
               </table>
             </div>

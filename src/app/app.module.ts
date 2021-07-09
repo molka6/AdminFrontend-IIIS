@@ -17,6 +17,11 @@ import { UpdatePartenaireComponent } from './Partenaire-Folder/update-partenaire
 import { IlefServicesComponent } from './IIS-Services-Folder/ilef-services/ilef-services.component';
 import { CreateServiceComponent } from './IIS-Services-Folder/create-service/create-service.component';
 
+import { HttpModule } from '@angular/http';
+import{ EquipeFormComponent} from  './equipe-Folder/equipe-form/equipe-form.component';
+import { UpdateEquipeComponent } from './equipe-Folder/update-equipe/update-equipe.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +29,13 @@ import { CreateServiceComponent } from './IIS-Services-Folder/create-service/cre
     MenuLeftComponent,
     OffreEmploiComponent,
     FooterComponent,
+
+
     EquipeComponent,
+    EquipeFormComponent,
+  
+    
+
     DashboardComponent,
     UpdateOffreComponent,
     CreateOffreComponent,
@@ -32,13 +43,18 @@ import { CreateServiceComponent } from './IIS-Services-Folder/create-service/cre
     CreatePartenaireComponent,
     UpdatePartenaireComponent,
     IlefServicesComponent,
-    CreateServiceComponent
+    CreateServiceComponent,
+    UpdateEquipeComponent,
+ 
+
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpModule
 
 
   ],

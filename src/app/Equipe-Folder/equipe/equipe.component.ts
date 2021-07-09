@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { EquipeService ,Equipe} from './equipe.service';
+
+import {EquipeService  ,Equipe} from '../equipe.service' ;
 
 @Component({
   selector: 'app-equipe',
@@ -15,17 +16,21 @@ export class EquipeComponent implements OnInit {
     .subscribe((data:Equipe[]) => {
       this.equipe=data;
     });
+
   }
 
   deletePost(id) {
+    var result = confirm("Cliquer sur OK pour confirmer la suppression ! ")
     this.equipeService.deletetPersonne(id).subscribe(
      result => {
        window.location.reload();
      }
     );
   }
+}
 
 
+  
 
   }
   

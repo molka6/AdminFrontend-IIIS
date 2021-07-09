@@ -1,9 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
-.btn.btn-rounded {
+
+/* .btn.btn-rounded {
+    
+} */
+
+.btn-position{
+
     border-radius: 50px;
     float: right;
     margin: 4px ;
 }
+
+
+
+
 .form-control {
     border-radius: 27px;
 }

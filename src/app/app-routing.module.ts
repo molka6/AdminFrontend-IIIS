@@ -12,13 +12,17 @@ import { CreatePartenaireComponent } from './Partenaire-Folder/create-partenaire
 import { UpdatePartenaireComponent } from './Partenaire-Folder/update-partenaire/update-partenaire.component';
 import { IlefServicesComponent } from './IIS-Services-Folder/ilef-services/ilef-services.component';
 import { CreateServiceComponent } from './IIS-Services-Folder/create-service/create-service.component';
+import{ EquipeFormComponent} from  './equipe-Folder/equipe-form/equipe-form.component'; 
 
+
+import { UpdateEquipeComponent } from './equipe-Folder/update-equipe/update-equipe.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
   { path: 'OffreEmploi', component: OffreEmploiComponent },
   { path: 'OffreEmploi/:id', component: OffreEmploiComponent },
-  { path: 'EquipeIIS', component: EquipeComponent },
+
+
   { path: 'CreateArticle', component: CreateServiceComponent },
   { path: 'CreateOffreEmploi', component: CreateOffreComponent },
   { path: 'UpdateOffre/:id', component: UpdateOffreComponent },
@@ -27,7 +31,14 @@ const routes: Routes = [
   { path: 'UpdatePartenaire/:id', component: UpdatePartenaireComponent },
   { path: 'Partenaire/:id', component: PartenaireComponent },
   { path: 'Services', component: IlefServicesComponent },
-  { path: 'CreateService', component: CreateServiceComponent },
+
+
+
+  {path: 'UpdateEquipe/:id', component :UpdateEquipeComponent},
+  { path: 'Equipe', component: EquipeComponent },
+  { path: 'createEquipe', component:EquipeFormComponent },
+
+
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes), FormsModule,],

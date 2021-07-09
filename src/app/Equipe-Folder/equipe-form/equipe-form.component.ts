@@ -31,7 +31,9 @@ export class EquipeFormComponent implements OnInit {
     Email :_Email=this.articleform.get('Email').value 
   };
     this.equipeservice.addPost(equipe).subscribe(( result => {
-      this.router.navigate(['/EquipeIIS']);
+
+      this.router.navigate(['/Equipe']);
+
     }), addError => this.errors = addError);
    }
 }

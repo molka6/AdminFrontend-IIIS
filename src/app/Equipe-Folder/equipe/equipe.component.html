@@ -3,7 +3,9 @@
     <app-menu-head></app-menu-head>
     <div class="main-panel">
             <div class="content-wrapper">  
-                <div class="row page-title-header margi">
+
+                <div class="row page-title-header ">
+
                    <div class="col-12">
                       <div class="page-header">
                           <h4 class="page-title ">EquipeIIS</h4>
@@ -21,8 +23,10 @@
                     <div  class="col-md-10">
                     </div>
                     <div  class="col-md-2">
-                    <button type="button" class="btn btn-inverse-danger btn-rounded btn-fw m1" routerLink="/Equipe">Ajouter</button>
-                    </div>
+
+                    <button type="button" class="btn btn-inverse-danger btn-rounded btn-fw m1" routerLink="/createEquipe">Ajouter</button>
+
+                  </div>
                     </div>
                     <!-- <p class="card-description"> Add class <code>.table-striped</code> </p>  -->
                       <table class="table table-striped">
@@ -32,7 +36,10 @@
                             <th> Prenom</th>
                             <th> Role </th>
                             <th> Email </th>
-                            <th>Action</th>               
+
+                            <th  rowspan="2" > 
+                              <div class="position">Action </div></th>          
+
                           </tr>
                         </thead>
                         <tbody>
@@ -41,12 +48,21 @@
                             <td class="py-1"> {{e.prenom}} </td> 
                             <td class="py-1"> {{e.role}} </td> 
                             <td class="py-1"> {{e.Email}} </td> 
-                            <td> 
-                              <div class="icon">
-                                      <a href="/UpdateEquipe/{{e.id}}" >  <i class="fa fa-edit"></i></a>    
-                                      <a (click)="deletePost(e.id)"  ><i class="fa fa-trash-o"></i></a> 
-                              </div>  
-                            </tr> 
+
+                            <td class="py-2">
+
+
+                               <button type="button" class="btn btn-outline-secondary btn-rounded btn-fw m"
+                              [routerLink]="[dynamicParameter]" (click)="deletePost(e.id)">Supprimer</button>
+
+    
+                              <button type="button" class="btn btn-outline-secondary btn-rounded btn-fw m" 
+                              routerLink="/UpdateEquipe/{{e.id}}"> Modifier </button>
+                              </td> 
+
+                          
+
+             </tr> 
                         </tbody>
                       </table>
                     </div>
