@@ -20,6 +20,8 @@ import { CreateServiceComponent } from './IIS-Services-Folder/create-service/cre
 import { HttpModule } from '@angular/http';
 import{ EquipeFormComponent} from  './equipe-Folder/equipe-form/equipe-form.component';
 import { UpdateEquipeComponent } from './equipe-Folder/update-equipe/update-equipe.component';
+import { MembreComponent } from './membre-Folder/membre/membre.component';
+
 
 
 @NgModule({
@@ -45,6 +47,8 @@ import { UpdateEquipeComponent } from './equipe-Folder/update-equipe/update-equi
     IlefServicesComponent,
     CreateServiceComponent,
     UpdateEquipeComponent,
+    MembreComponent,
+  
  
 
   ],
