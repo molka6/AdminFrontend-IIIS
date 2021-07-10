@@ -15,4 +15,19 @@ export class IlefServicesComponent implements OnInit {
     this.ilefServiceService.getAllService().then((resp) => { this.ServiceListe = resp.data });
   }
 
+  deleteService(id) {
+
+    // let dynamicParameter = this.OffreEmploiId(element);
+
+    var result = confirm("Cliquer sur OK pour confirmer la suppression ! ")
+    if (result) {
+      this.ilefServiceService.deleteService(id).then(() => {
+
+        window.location.reload();
+      }
+
+      )
+    }
+
+}
 }

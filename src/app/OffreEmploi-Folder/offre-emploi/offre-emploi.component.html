@@ -36,8 +36,9 @@
                     <th> Description </th>
                     <th> Date Ajoiut </th>
 
-                    <th  rowspan="2" > 
-                      <div class="position">Action </div></th>
+                    <th rowspan="2">
+                      <div class="position">Action </div>
+                    </th>
 
                   </tr>
                 </thead>
@@ -50,15 +51,15 @@
                     <td class="py-4"> {{ offre.description}} </td>
                     <td class="py-1"> {{ offre.DateAjout}}</td>
                     <td class="py-2">
-                    
-                      <button type="button" class="btn btn-outline-secondary btn-rounded btn-fw m"
-                      [routerLink]="[dynamicParameter]" (click)="deleteOffre(offre)">Supprimer</button>
 
-                      <button type="button" class="btn btn-outline-secondary btn-rounded btn-fw m" 
-                      routerLink="/UpdateOffre/{{offre.id}}"> Modifier </button>
-                      </td> 
-                   </tr>
-                    </tbody>
+                      <button type="button" class="btn btn-outline-secondary btn-rounded btn-fw m"
+                        (click)="deleteOffre(offre.id)">Supprimer</button>
+
+                      <button type="button" class="btn btn-outline-secondary btn-rounded btn-fw m"
+                        routerLink="/UpdateOffre/{{offre.id}}"> Modifier </button>
+                    </td>
+                  </tr>
+                </tbody>
 
               </table>
             </div>
