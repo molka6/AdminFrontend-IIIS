@@ -16,6 +16,11 @@ import{ EquipeFormComponent} from  './equipe-Folder/equipe-form/equipe-form.comp
 
 import { UpdateEquipeComponent } from './equipe-Folder/update-equipe/update-equipe.component';
 
+
+import { MembreComponent } from './membre-Folder/membre/membre.component';
+
+
+
 const routes: Routes = [
   { path: '', component: DashboardComponent },
   { path: 'OffreEmploi', component: OffreEmploiComponent },
@@ -34,7 +39,9 @@ const routes: Routes = [
   {path: 'UpdateEquipe/:id', component :UpdateEquipeComponent},
   { path: 'Equipe', component: EquipeComponent },
   { path: 'createEquipe', component:EquipeFormComponent },
-
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+  { path: 'membre', component:MembreComponent },
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 ];
 @NgModule({
