@@ -1,12 +1,69 @@
 <div class="container-scroller">
-    <div class="container-fluid page-body-wrapper">
-      <app-menu-head></app-menu-head>
-      <div class="main-panel">
+  <div class="container-fluid page-body-wrapper">
+    <app-menu-head></app-menu-head>
+    <div class="main-panel">
             <div class="content-wrapper">  
+                <div class="row page-title-header ">
+                   <div class="col-12">
+                      <div class="page-header">
+                          <h4 class="page-title ">EquipeIIS</h4>
+                            <div class="quick-link-wrapper w-100 d-md-flex flex-md-wrap">
+                            </div>
+                      </div>
+                     </div>
+                </div>
+                <!-- ************Table ************* -->
+                <div class="col-lg-12  stretch-card ">
+                  <div class="card">
+                    <div class="card-body">
+                      <h4 class="card-title">Equipe :</h4>
+                    <div  class="row">
+                    <div  class="col-md-10">
+                    </div>
+                    <div  class="col-md-2">
+                    <button type="button" class="btn btn-inverse-danger btn-rounded btn-fw m1" routerLink="/createEquipe">Ajouter</button>
+                    </div>
+                    </div>
+                    <!-- <p class="card-description"> Add class <code>.table-striped</code> </p>  -->
+                      <table class="table table-striped">
+                        <thead>
+                          <tr>
+                            <th> Nom</th>
+                            <th> Prenom</th>
+                            <th> Role </th>
+                            <th> Email </th>
+                            <th  rowspan="2" > 
+                              <div class="position">Action </div></th>          
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let e of equipe " > 
+                            <td class="py-1"> {{e.nom}} </td>
+                            <td class="py-1"> {{e.prenom}} </td> 
+                            <td class="py-1"> {{e.role}} </td> 
+                            <td class="py-1"> {{e.Email}} </td> 
+                            <td class="py-2">
 
-               
+
+                               <button type="button" class="btn btn-outline-secondary btn-rounded btn-fw m"
+                              [routerLink]="[dynamicParameter]" (click)="deletePost(e.id)">Supprimer</button>
+
+    
+                              <button type="button" class="btn btn-outline-secondary btn-rounded btn-fw m" 
+                              routerLink="/UpdateEquipe/{{e.id}}"> Modifier </button>
+                              </td> 
+
+                          
+
+                            </tr> 
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>  
+              <!-- ******endtable************* -->
             </div>   
-            <app-footer></app-footer>    
-      </div>
+            <app-footer></app-footer>
     </div>
+  </div>             
 </div>

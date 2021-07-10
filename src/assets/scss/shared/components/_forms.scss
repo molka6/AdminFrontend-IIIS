@@ -14,6 +14,7 @@
 }
 
 .form-control {
+  border-radius: 27px !important;
   display: inline-block;
   border: 1px solid $border-color;
   font-family: $type-1;
@@ -25,10 +26,12 @@
 
   &.form-control-lg {
     padding: $input-btn-padding-y-lg .75rem;
+    border-radius: 27px !important;
   }
 
   &.form-control-sm {
     padding: $input-btn-padding-y-sm .75rem;
+    border-radius: 27px !important;
   }
 }
 

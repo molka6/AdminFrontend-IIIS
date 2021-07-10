@@ -2,58 +2,67 @@
   <div class="container-fluid page-body-wrapper">
     <app-menu-head></app-menu-head>
     <div class="main-panel">
-            <div class="content-wrapper">  
-              <div class="row page-title-header margi">
-                <div class="col-12">
-                   <div class="page-header">
-                       <h4 class="page-title ">Offres d'emploi </h4>
-                   </div>
-                  </div>
+      <div class="content-wrapper">
+        <div class="row page-title-header margi">
+          <div class="col-12">
+            <div class="page-header">
+              <h4 class="page-title ">Offres d'emploi </h4>
+            </div>
+          </div>
 
-             </div>
-                <!-- ************Table ************* -->
-                <div class="col-lg-12  stretch-card ">
-                  <div class="card">
-                    <div class="card-body">
-                      <h4 class="card-title">Liste des offres d'emploi:</h4>
-
-
-                    <div  class="row">
-                    <div  class="col-md-10">
-                  
-                    </div>
-                    <div  class="col-md-2">
-                    <button type="button" class="btn btn-inverse-danger btn-rounded btn-fw m1" routerLink="/CreateOffreEmploi">Ajouter</button>
-                    </div>
-                    </div>
-
-                      <!-- <p class="card-description"> Add class <code>.table-striped</code> </p> -->
-                      <table class="table table-striped">
-                        <thead>
-                          <tr>
-                            <th> Titre</th>
-                            <th> Description </th>
-                            <th> Image </th>
-                            <th> Date Ajoiut </th>
-                            <th> Action </th>
-                          </tr>
-                        </thead>
+        </div>
+        <!-- ************Table ************* -->
+        <div class="col-lg-12  stretch-card ">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Liste des offres d'emploi:</h4>
 
 
-                        <tbody>
+              <div class="row">
+                <div class="col-md-10">
 
-                          
-                        </tbody>
+                </div>
+                <div class="col-md-2">
+                  <button type="button" class="btn btn-inverse-danger btn-rounded btn-fw m1"
+                    routerLink="/CreateOffreEmploi">Ajouter</button>
+                </div>
+              </div>
+
+              <!-- <p class="card-description"> Add class <code>.table-striped</code> </p> -->
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th> Titre</th>
+                    <th> Description </th>
+                    <th> Date Ajoiut </th>
+                    <th  rowspan="2" > 
+                      <div class="position">Action </div></th>
+                  </tr>
+                </thead>
 
 
+                <tbody>
+                  <tr *ngFor="let offre of  offreEmploiListe ">
+                    <td class="py-1"> {{ offre.title}} </td>
+                    <td class="py-4"> {{ offre.description}} </td>
+                    <td class="py-1"> {{ offre.DateAjout}}</td>
+                    <td class="py-2">
+                    
+                      <button type="button" class="btn btn-outline-secondary btn-rounded btn-fw m"
+                      [routerLink]="[dynamicParameter]" (click)="deleteOffre(offre)">Supprimer</button>
 
-                      </table>
-                    </div>
-                  </div>
-                </div>  
-              <!-- ******endtable************* -->
-            </div>   
-            <app-footer></app-footer>
+                      <button type="button" class="btn btn-outline-secondary btn-rounded btn-fw m" 
+                      routerLink="/UpdateOffre/{{offre.id}}"> Modifier </button>
+                      </td> 
+                   </tr>
+                    </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <!-- ******endtable************* -->
+      </div>
+      <app-footer></app-footer>
     </div>
-  </div>             
+  </div>
 </div>

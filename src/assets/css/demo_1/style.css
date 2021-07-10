@@ -772,13 +772,13 @@
     background: rgb(255, 255, 255); 
   }
 
-stretch-card2 {
+/* stretch-card2 {
   display: flex;
   align-items: stretch;
   justify-content: stretch; }
   .stretch-card2 > .card2 {
     width: 93%;
-    min-width: 63%;}
+    min-width: 63%;} */
 
     .main-panel2 {
       transition: width 0.25s ease, margin 0.25s ease;
@@ -787,4 +787,8 @@ stretch-card2 {
       display: flex;
       flex-direction: column; }
   
-   
+      
+      .position{
+        margin-left: 91px;
+    }
+    
