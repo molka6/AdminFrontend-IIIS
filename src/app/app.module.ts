@@ -26,6 +26,7 @@ import { ArticleComponent } from './ArticleFolder/article/article.component';
 import { CreateArticleComponent } from './ArticleFolder/create-article/create-article.component';
 
 import { MembreComponent } from './membre-Folder/membre/membre.component';
+import { UpdateArticleComponent } from './ArticleFolder/update-article/update-article.component';
 
 
 
@@ -59,6 +60,8 @@ import { MembreComponent } from './membre-Folder/membre/membre.component';
     CreateArticleComponent,
 
     MembreComponent,
+
+    UpdateArticleComponent,
   
 
  

@@ -6,12 +6,15 @@ import axios from 'axios';
 export class IlefServiceService {
 
   UrlService = 'http://localhost:8000/IlefService';
-  UrlCreate: 'http://localhost:8000/createService';
+  UrlCreate = 'http://localhost:8000/createService';
   UrlUpdate = 'http://localhost:8000/UpdateService/';
-  UrlOneService = 'http://localhost:8000/getService'
+  UrlOneService = 'http://localhost:8000/getService';
+  UrlDelete = 'http://localhost:8000/Service';
   constructor() { }
 
-
+  async deleteService(id) {
+    return await axios.delete(this.UrlDelete + "/" + id)
+  }
   async getAllService() {
 
     return await axios.get(`${this.UrlService}`);
@@ -19,7 +22,7 @@ export class IlefServiceService {
   }
 
   createService(Service) {
-    alert('ggg');
+
     return axios.post(`${this.UrlCreate}`, Service);
   }
 
@@ -32,4 +35,9 @@ export class IlefServiceService {
     return await axios.get(`${this.UrlOneService}` + '/' + id);
 
   }
+
+
+
+ 
+
 }
