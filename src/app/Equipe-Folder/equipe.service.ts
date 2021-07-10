@@ -11,7 +11,6 @@ export class EquipeService {
   private url = 'http://127.0.0.1:8000';
 
 
-
   getpersonnes(): Observable<any[]> {
     const  headers = new Headers();
     return  this.http.get(this.url+ '/personne/' , {headers : headers}).map(res => <Equipe[]> res.json() ).catch(this.handelError);
@@ -23,6 +22,7 @@ export class EquipeService {
     return this.http.delete(this.url  + '/delete/'+ id, {headers : headers}).map(res => res.json());
   }
  
+
   addPost(equipe: Equipe) {
     const headers = new Headers();
     headers.append('content-type', 'application/json');

@@ -16,10 +16,12 @@ import { CreatePartenaireComponent } from './Partenaire-Folder/create-partenaire
 import { UpdatePartenaireComponent } from './Partenaire-Folder/update-partenaire/update-partenaire.component';
 import { IlefServicesComponent } from './IIS-Services-Folder/ilef-services/ilef-services.component';
 import { CreateServiceComponent } from './IIS-Services-Folder/create-service/create-service.component';
+
 import { HttpModule } from '@angular/http';
 import{ EquipeFormComponent} from  './equipe-Folder/equipe-form/equipe-form.component';
 import { UpdateEquipeComponent } from './equipe-Folder/update-equipe/update-equipe.component';
 import { MembreComponent } from './membre-Folder/membre/membre.component';
+
 
 
 @NgModule({
@@ -35,6 +37,7 @@ import { MembreComponent } from './membre-Folder/membre/membre.component';
     EquipeFormComponent,
   
     
+
     DashboardComponent,
     UpdateOffreComponent,
     CreateOffreComponent,
@@ -47,6 +50,7 @@ import { MembreComponent } from './membre-Folder/membre/membre.component';
     MembreComponent,
   
  
+
   ],
   imports: [
     FormsModule,
