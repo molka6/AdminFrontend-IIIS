@@ -9,13 +9,21 @@ import {Http, Headers, Response, URLSearchParams} from '@angular/http';
   providedIn: 'root'
 })
 export class AuthService {
+
+
+
   private currentUserSubject: BehaviorSubject<User>;
+  
   public currentUser: Observable<User>;
-  apiUrl="http://localhost:8000/api/login"; 
+
+
+
 
   constructor(private http: Http) {
+
     this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
     this.currentUser = this.currentUserSubject.asObservable();
+
 }
 
   public get currentUserValue(): User {
@@ -33,14 +41,30 @@ export class AuthService {
         }));
 }
 
+getById(id): Observable<any[]> {
+  const headers = new Headers();
+  return this.http.get('http://localhost:8000/api/users/' + id, { headers: headers }).map(res => <User[]>res.json()).catch(this.handelError);
+}
+
+
+
+
+      logout() {
+      // remove user from local storage to log user out
+      localStorage.removeItem('currentUser');
+      this.currentUserSubject.next(null);
+    }
+
+
+    
+
   private handelError(error: Response) {
-
     return Observable.throw(error.json() || 'server error');
-
   }
 
 }
 
 export class User{
-
+ 
+  
 }
