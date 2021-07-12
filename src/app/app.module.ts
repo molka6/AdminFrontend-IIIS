@@ -16,18 +16,14 @@ import { CreatePartenaireComponent } from './Partenaire-Folder/create-partenaire
 import { UpdatePartenaireComponent } from './Partenaire-Folder/update-partenaire/update-partenaire.component';
 import { IlefServicesComponent } from './IIS-Services-Folder/ilef-services/ilef-services.component';
 import { CreateServiceComponent } from './IIS-Services-Folder/create-service/create-service.component';
-
 import { HttpModule } from '@angular/http';
 import{ EquipeFormComponent} from  './equipe-Folder/equipe-form/equipe-form.component';
 import { UpdateEquipeComponent } from './equipe-Folder/update-equipe/update-equipe.component';
-
 import { UpdateServiceComponent } from './IIS-Services-Folder/update-service/update-service.component';
 import { ArticleComponent } from './ArticleFolder/article/article.component';
 import { CreateArticleComponent } from './ArticleFolder/create-article/create-article.component';
-
 import { MembreComponent } from './membre-Folder/membre/membre.component';
-
-
+import { LoginComponent } from './Auth/login/login.component';
 
 
 @NgModule({
@@ -37,13 +33,8 @@ import { MembreComponent } from './membre-Folder/membre/membre.component';
     MenuLeftComponent,
     OffreEmploiComponent,
     FooterComponent,
-
-
     EquipeComponent,
     EquipeFormComponent,
-  
-    
-
     DashboardComponent,
     UpdateOffreComponent,
     CreateOffreComponent,
@@ -53,15 +44,13 @@ import { MembreComponent } from './membre-Folder/membre/membre.component';
     IlefServicesComponent,
     CreateServiceComponent,
     UpdateEquipeComponent,
-
     UpdateServiceComponent,
     ArticleComponent,
     CreateArticleComponent,
-
     MembreComponent,
+    LoginComponent,
   
-
- 
+    
 
   ],
   imports: [
@@ -70,7 +59,8 @@ import { MembreComponent } from './membre-Folder/membre/membre.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule
+    HttpModule,
+  
 
 
   ],
