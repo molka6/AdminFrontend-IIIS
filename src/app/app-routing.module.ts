@@ -16,6 +16,7 @@ import { UpdateEquipeComponent } from './equipe-Folder/update-equipe/update-equi
 import { UpdateServiceComponent } from './IIS-Services-Folder/update-service/update-service.component';
 import { ArticleComponent } from './ArticleFolder/article/article.component';
 import { CreateArticleComponent } from './ArticleFolder/create-article/create-article.component';
+import { UpdateArticleComponent } from './ArticleFolder/update-article/update-article.component'
 import { MembreComponent } from './membre-Folder/membre/membre.component';
 import { LoginComponent } from './Auth/login/login.component';
 import{AuthGuardComponent} from './Auth/login/auth-guard/auth-guard.component' ; 
@@ -40,8 +41,10 @@ const routes: Routes = [
   { path: 'CreateArticle', component: CreateArticleComponent ,canActivate: [AuthGuardComponent] },
   { path: 'createEquipe', component:EquipeFormComponent  ,canActivate: [AuthGuardComponent]},
   { path: 'membre', component:MembreComponent ,canActivate: [AuthGuardComponent] },
+  { path: 'UpdateArticle/:id', component: UpdateArticleComponent },
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
   { path: '', component:LoginComponent },
+
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes), FormsModule,],

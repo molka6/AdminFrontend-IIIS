@@ -8,7 +8,10 @@ import { Observable } from 'rxjs';
 })
 export class ArticleService {
   BaseUrl = 'http://localhost:8000/Articles';
-  UrlCreate: 'http://localhost:8000/createArticle';
+  UrlCreate = 'http://localhost:8000/createArticle';
+  BaseUrlUpdate = 'http://localhost:8000/UpdateArticle/';
+  BaseUrlArticle = 'http://localhost:8000/getArticle';
+  UrlDelete = "http://localhost:8000/Article";
 
   url="http://localhost:8000";
 
@@ -36,8 +39,20 @@ export class ArticleService {
 
   }
 
+  async getOneArticle(id) {
 
-}
+    return await axios.get(`${this.BaseUrlArticle}` + '/' + id);
+
+  }
+  async updateArticle(id, offre) {
+    return await axios.put(`${this.BaseUrlUpdate}` + id, offre);
+
+  }
+
+  async deleteArticle(id) {
+    return await axios.delete(this.UrlDelete + "/" + id)
+  }
+
 
 export class Article {
   constructor(public id, public title: string, public description: string , public DateAjout: string ,public image: string ) {

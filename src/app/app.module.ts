@@ -27,6 +27,11 @@ import { LoginComponent } from './Auth/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AlertComponent } from './components/alert/alert.component';
 import { AuthGuardComponent } from './Auth/login/auth-guard/auth-guard.component';
+import { UpdateArticleComponent } from './ArticleFolder/update-article/update-article.component';
+
+
+
+
 
 @NgModule({
   declarations: [
@@ -53,9 +58,8 @@ import { AuthGuardComponent } from './Auth/login/auth-guard/auth-guard.component
     LoginComponent,
     AlertComponent,
     AuthGuardComponent,
-  
-    
-
+    UpdateArticleComponent,
+ 
   ],
   imports: [
     FormsModule,

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { IlefServiceService } from '../ilef-service.service';
 
 @Component({
@@ -16,22 +16,33 @@ export class UpdateServiceComponent implements OnInit {
     description: new FormControl('', [Validators.required, Validators.minLength(3)]),
   });
   Service
-  constructor(private ilefServiceService: IlefServiceService, private route: ActivatedRoute) { }
+  OneService: any;
+  constructor(private ilefServiceService: IlefServiceService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
 
     const id = this.route.snapshot.paramMap.get("id");
 
     this.ilefServiceService.getOneService(id).then((resp) => {
-      this.formService = resp.data; console.log(resp.data)
+      this.OneService = resp.data; console.log(resp.data)
 
-
-      this.formService.controls['title'].setValue('jjj');
-      this.formService.controls['description'].setValue(this.Service.Description);
+      this.formService.controls['title'].setValue(this.OneService.title);
+      this.formService.controls['description'].setValue(this.OneService.Description);
 
     });
   }
   UpdateService(e) {
+    const id = this.route.snapshot.paramMap.get("id");
+    this.ilefServiceService.updateService(id, {
+      'title': this.formService.get('title').value,
+      'description': this.formService.get('description').value,
+
+    }).then(() => {
+
+      console.warn("success");
+      this.router.navigate(['/Services']);
+
+    })
 
   }
 }
