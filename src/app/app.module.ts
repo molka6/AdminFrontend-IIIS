@@ -16,17 +16,19 @@ import { CreatePartenaireComponent } from './Partenaire-Folder/create-partenaire
 import { UpdatePartenaireComponent } from './Partenaire-Folder/update-partenaire/update-partenaire.component';
 import { IlefServicesComponent } from './IIS-Services-Folder/ilef-services/ilef-services.component';
 import { CreateServiceComponent } from './IIS-Services-Folder/create-service/create-service.component';
-
 import { HttpModule } from '@angular/http';
 import{ EquipeFormComponent} from  './equipe-Folder/equipe-form/equipe-form.component';
 import { UpdateEquipeComponent } from './equipe-Folder/update-equipe/update-equipe.component';
-
 import { UpdateServiceComponent } from './IIS-Services-Folder/update-service/update-service.component';
 import { ArticleComponent } from './ArticleFolder/article/article.component';
 import { CreateArticleComponent } from './ArticleFolder/create-article/create-article.component';
-
 import { MembreComponent } from './membre-Folder/membre/membre.component';
+import { LoginComponent } from './Auth/login/login.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AlertComponent } from './components/alert/alert.component';
+import { AuthGuardComponent } from './Auth/login/auth-guard/auth-guard.component';
 import { UpdateArticleComponent } from './ArticleFolder/update-article/update-article.component';
+
 
 
 
@@ -38,13 +40,8 @@ import { UpdateArticleComponent } from './ArticleFolder/update-article/update-ar
     MenuLeftComponent,
     OffreEmploiComponent,
     FooterComponent,
-
-
     EquipeComponent,
     EquipeFormComponent,
-  
-    
-
     DashboardComponent,
     UpdateOffreComponent,
     CreateOffreComponent,
@@ -54,18 +51,15 @@ import { UpdateArticleComponent } from './ArticleFolder/update-article/update-ar
     IlefServicesComponent,
     CreateServiceComponent,
     UpdateEquipeComponent,
-
     UpdateServiceComponent,
     ArticleComponent,
     CreateArticleComponent,
-
     MembreComponent,
-
+    LoginComponent,
+    AlertComponent,
+    AuthGuardComponent,
     UpdateArticleComponent,
-  
-
  
-
   ],
   imports: [
     FormsModule,
@@ -73,11 +67,12 @@ import { UpdateArticleComponent } from './ArticleFolder/update-article/update-ar
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     HttpModule
 
 
   ],
-  providers: [],
+  providers: [ AuthGuardComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -20,11 +20,12 @@ export class MembreComponent implements OnInit {
 
   deletePost(id) {
     var result = confirm("Cliquer sur OK pour confirmer la suppression ! ")
-    this.membreService.deletetPersonne(id).subscribe(
+    if(result){    
+      this.membreService.deletetPersonne(id).subscribe(
      result => {
        window.location.reload();
      }
     );
-  }
+  }}
 
 }

@@ -9,7 +9,9 @@ import { ArticleService } from '../article.service';
   styleUrls: ['./create-article.component.css']
 })
 export class CreateArticleComponent implements OnInit {
-  formArticle = new FormGroup({
+
+
+
 
     title: new FormControl('', [Validators.required, Validators.minLength(3)]),
     dateAjout: new FormControl('', [Validators.required, Validators.minLength(3)]),
@@ -48,14 +50,15 @@ export class CreateArticleComponent implements OnInit {
         'image': this.formArticle.get('image').value,
 
 
-      }).then(() => {
+
 
 
         console.warn("success");
         this.router.navigate(['/Articles']);
 
-      })
-    }
+
+  // formArticle = new FormGroup({
+
 
   }
 
