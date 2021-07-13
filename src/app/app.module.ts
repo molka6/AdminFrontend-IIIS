@@ -24,7 +24,9 @@ import { ArticleComponent } from './ArticleFolder/article/article.component';
 import { CreateArticleComponent } from './ArticleFolder/create-article/create-article.component';
 import { MembreComponent } from './membre-Folder/membre/membre.component';
 import { LoginComponent } from './Auth/login/login.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import { AlertComponent } from './components/alert/alert.component';
+import { AuthGuardComponent } from './Auth/login/auth-guard/auth-guard.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +51,8 @@ import { LoginComponent } from './Auth/login/login.component';
     CreateArticleComponent,
     MembreComponent,
     LoginComponent,
+    AlertComponent,
+    AuthGuardComponent,
   
     
 
@@ -59,12 +63,12 @@ import { LoginComponent } from './Auth/login/login.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule,
-  
+    HttpClientModule,
+    HttpModule
 
 
   ],
-  providers: [],
+  providers: [ AuthGuardComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

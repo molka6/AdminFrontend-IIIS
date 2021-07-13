@@ -19,15 +19,18 @@ export class LoginComponent implements OnInit {
           if (this.authenticationService.currentUserValue)
            { 
               this.router.navigate(['/Dashboard']);
-           }
-              
+           }         
     }
+    
   ngOnInit() {
   this.loginForm = this.formBuilder.group({
     username: ['', Validators.required],
     password: ['', Validators.required]
 });
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/Dashboard';
+
+
+
            }
 
 
@@ -35,7 +38,6 @@ export class LoginComponent implements OnInit {
    get f() {
         return this.loginForm.controls;
           }
-
    onSubmit() {
     this.submitted = true;
     // stop here if form is invalid
@@ -54,7 +56,6 @@ export class LoginComponent implements OnInit {
                 this.loading = false;
             });
 }
-
 }
 
 
@@ -63,27 +64,3 @@ export class LoginComponent implements OnInit {
 
 
 
-
-//   username: string;
-//   password: string;
-//   error: string;
-
-//  constructor( private router: Router,
-//               private authenticationService: AuthService) {}
-
-//  ngOnInit() {
-//   //  this.authenticationService.logout();
-//  }
-
-// onSubmit(e) {
-//   e.preventDefault();
-//    this.authenticationService.login(this.username, this.password)
-//      .subscribe(result => {
-//        console.log(result);
-//        this.router.navigate(['/Dashboard']);
-//      }, loginError => this.error = loginError.message + ' : verify  your username or password !  ');
-//  }
-
-
-
-// }
