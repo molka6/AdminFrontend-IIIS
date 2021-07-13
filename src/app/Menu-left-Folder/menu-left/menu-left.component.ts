@@ -10,19 +10,17 @@ import {User} from '../../models/user';
 export class MenuLeftComponent implements OnInit {
 
   currentUser: User;
-
   constructor(
       private authenticationService:  AuthService,
       private router: Router
   ) {
       this.currentUser = this.authenticationService.currentUserValue;
   }
-
   ngOnInit() {
     console.log(this.authenticationService.currentUserValue)
      console.log(this.currentUser.token) ; 
      console.log(this.currentUser.id) ; 
-     console.log(this.currentUser[1]) ; 
+     console.log(this.currentUser.password) ; 
   }
 
   

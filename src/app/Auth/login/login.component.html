@@ -1,13 +1,14 @@
 <div class="limiter">
     <div class="container-login100">
         <div class="wrap-login100 p-t-85 p-b-20">
-
+         
             <form [formGroup]="loginForm" class="login100-form validate-form" (ngSubmit)="onSubmit()">
                 <span class="login100-form-title p-b-70">  
                 </span>
                 <span class="login100-form-avatar">
                     <img src="assets/images/logo/ilef.jpg" alt="AVATAR">
                 </span>
+                <app-alert></app-alert>
                 <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
                 <div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Enter username">
                     <input class="input100" 
@@ -47,7 +48,6 @@
                         Login
                     </button>
                 </div>
-                <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
                 <ul class="login-more p-t-190">
                     <li class="m-b-8">
                         <span class="txt1">

@@ -3,6 +3,7 @@ import {AuthService} from '../auth.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { first } from 'rxjs/operators';
+import {AlertService } from '../../components/alert.service'; 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -13,8 +14,12 @@ export class LoginComponent implements OnInit {
   loading = false;
   submitted = false;
   returnUrl: string;
-  error = '';
-  constructor(private formBuilder: FormBuilder,private route: ActivatedRoute,private router: Router,private authenticationService: AuthService) { 
+  constructor(private formBuilder: FormBuilder,
+    private route: ActivatedRoute,
+    private router: Router,
+    private authenticationService: AuthService,
+    private alertService: AlertService 
+    ) { 
           // redirect to home if already logged in
           if (this.authenticationService.currentUserValue)
            { 
@@ -40,6 +45,7 @@ export class LoginComponent implements OnInit {
           }
    onSubmit() {
     this.submitted = true;
+    this.alertService.clear();
     // stop here if form is invalid
     if (this.loginForm.invalid) {
         return;
@@ -52,8 +58,8 @@ export class LoginComponent implements OnInit {
                 this.router.navigate([this.returnUrl]);
             },
             error => {
-                this.error = error;
-                this.loading = false;
+              this.alertService.error("Username or password is incorrect ");
+              this.loading = false;
             });
 }
 }
