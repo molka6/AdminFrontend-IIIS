@@ -53,7 +53,12 @@
                                     <tr *ngFor="let Service of  ServiceListe ">
 
                                         <td class="py-1"> {{Service.title}} </td>
-                                        <td> {{Service.description}} </td>
+                                        <td style="  padding: 25px;
+                                        overflow: hidden;
+                                        white-space: nowrap;
+                                        width: 100px;
+                                       
+                                        text-overflow: ellipsis; "> {{Service.description}} </td>
 
                                         <td class="py-2">
                                             <button type="button" class="btn btn-outline-secondary btn-rounded btn-fw m"

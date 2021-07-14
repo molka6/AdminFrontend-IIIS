@@ -17,7 +17,7 @@ import { UpdatePartenaireComponent } from './Partenaire-Folder/update-partenaire
 import { IlefServicesComponent } from './IIS-Services-Folder/ilef-services/ilef-services.component';
 import { CreateServiceComponent } from './IIS-Services-Folder/create-service/create-service.component';
 import { HttpModule } from '@angular/http';
-import{ EquipeFormComponent} from  './equipe-Folder/equipe-form/equipe-form.component';
+import { EquipeFormComponent } from './equipe-Folder/equipe-form/equipe-form.component';
 import { UpdateEquipeComponent } from './equipe-Folder/update-equipe/update-equipe.component';
 import { UpdateServiceComponent } from './IIS-Services-Folder/update-service/update-service.component';
 import { ArticleComponent } from './ArticleFolder/article/article.component';
@@ -28,6 +28,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { AlertComponent } from './components/alert/alert.component';
 import { AuthGuardComponent } from './Auth/login/auth-guard/auth-guard.component';
 import { UpdateArticleComponent } from './ArticleFolder/update-article/update-article.component';
+import { ContactComponent } from './ContactFolder/contact/contact.component';
+import { ContactDetaillsComponent } from './ContactFolder/contact-detaills/contact-detaills.component';
+import { CommentairesComponent } from './ArticleFolder/commentaires/commentaires.component';
 
 
 
@@ -59,7 +62,10 @@ import { UpdateArticleComponent } from './ArticleFolder/update-article/update-ar
     AlertComponent,
     AuthGuardComponent,
     UpdateArticleComponent,
- 
+    ContactComponent,
+    ContactDetaillsComponent,
+    CommentairesComponent,
+
   ],
   imports: [
     FormsModule,
@@ -72,7 +78,7 @@ import { UpdateArticleComponent } from './ArticleFolder/update-article/update-ar
 
 
   ],
-  providers: [ AuthGuardComponent],
+  providers: [AuthGuardComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

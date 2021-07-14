@@ -19,31 +19,37 @@ import { CreateArticleComponent } from './ArticleFolder/create-article/create-ar
 import { UpdateArticleComponent } from './ArticleFolder/update-article/update-article.component'
 import { MembreComponent } from './membre-Folder/membre/membre.component';
 import { LoginComponent } from './Auth/login/login.component';
-import{AuthGuardComponent} from './Auth/login/auth-guard/auth-guard.component' ; 
+import { AuthGuardComponent } from './Auth/login/auth-guard/auth-guard.component';
+import { ContactComponent } from './ContactFolder/contact/contact.component';
+import { ContactDetaillsComponent } from './ContactFolder/contact-detaills/contact-detaills.component';
+import { CommentairesComponent } from './ArticleFolder/commentaires/commentaires.component';
 const routes: Routes = [
-  { path: 'Dashboard', component: DashboardComponent,canActivate: [AuthGuardComponent]  },
-  { path: 'OffreEmploi', component: OffreEmploiComponent ,canActivate: [AuthGuardComponent]  },
-  { path: 'OffreEmploi/:id', component: OffreEmploiComponent ,canActivate: [AuthGuardComponent]  },
-  { path: 'CreateOffreEmploi', component: CreateOffreComponent,canActivate: [AuthGuardComponent]  },
-  { path: 'UpdateOffre/:id', component: UpdateOffreComponent ,canActivate: [AuthGuardComponent] },
-  { path: 'Partenaire', component: PartenaireComponent  ,canActivate: [AuthGuardComponent]},
-  { path: 'CreatePartenaire', component: CreatePartenaireComponent  ,canActivate: [AuthGuardComponent]},
-  { path: 'UpdatePartenaire/:id', component: UpdatePartenaireComponent ,canActivate: [AuthGuardComponent] },
-  { path: 'Partenaire/:id', component: PartenaireComponent  ,canActivate: [AuthGuardComponent]},
-  { path: 'Services', component: IlefServicesComponent ,canActivate: [AuthGuardComponent] },
-  { path: 'CreateServiceIlef', component: CreateServiceComponent  ,canActivate: [AuthGuardComponent]},
-  { path: 'UpdateOffre/:id', component: UpdateOffreComponent  ,canActivate: [AuthGuardComponent]},
-  { path: 'UpdateEquipe/:id', component: UpdateEquipeComponent ,canActivate: [AuthGuardComponent] },
-  { path: 'Equipe', component: EquipeComponent  ,canActivate: [AuthGuardComponent]},
-  { path: 'createEquipe', component: EquipeFormComponent  ,canActivate: [AuthGuardComponent]},
-  { path: 'UpdateService/:id', component: UpdateServiceComponent  ,canActivate: [AuthGuardComponent]},
-  { path: 'Articles', component: ArticleComponent ,canActivate: [AuthGuardComponent] },
-  { path: 'CreateArticle', component: CreateArticleComponent ,canActivate: [AuthGuardComponent] },
-  { path: 'createEquipe', component:EquipeFormComponent  ,canActivate: [AuthGuardComponent]},
-  { path: 'membre', component:MembreComponent ,canActivate: [AuthGuardComponent] },
+  { path: 'Dashboard', component: DashboardComponent },
+  { path: 'OffreEmploi', component: OffreEmploiComponent },
+  { path: 'OffreEmploi/:id', component: OffreEmploiComponent },
+  { path: 'CreateOffreEmploi', component: CreateOffreComponent, },
+  { path: 'UpdateOffre/:id', component: UpdateOffreComponent, },
+  { path: 'Partenaire', component: PartenaireComponent, },
+  { path: 'CreatePartenaire', component: CreatePartenaireComponent, },
+  { path: 'UpdatePartenaire/:id', component: UpdatePartenaireComponent, },
+  { path: 'Partenaire/:id', component: PartenaireComponent, },
+  { path: 'Services', component: IlefServicesComponent, },
+  { path: 'CreateServiceIlef', component: CreateServiceComponent, },
+  { path: 'UpdateOffre/:id', component: UpdateOffreComponent, },
+  { path: 'UpdateEquipe/:id', component: UpdateEquipeComponent, },
+  { path: 'Equipe', component: EquipeComponent, },
+  { path: 'createEquipe', component: EquipeFormComponent, },
+  { path: 'UpdateService/:id', component: UpdateServiceComponent, },
+  { path: 'Articles', component: ArticleComponent, },
+  { path: 'CreateArticle', component: CreateArticleComponent, },
+  { path: 'createEquipe', component: EquipeFormComponent, },
+  { path: 'membre', component: MembreComponent, },
   { path: 'UpdateArticle/:id', component: UpdateArticleComponent },
-// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-  { path: '', component:LoginComponent },
+  { path: 'Contact', component: ContactComponent },
+  { path: 'Contactdetaills/:id', component: ContactDetaillsComponent },
+  { path: 'listeCommentaire/:id', component: CommentairesComponent },
+  // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+  { path: '', component: LoginComponent },
 
 ];
 @NgModule({

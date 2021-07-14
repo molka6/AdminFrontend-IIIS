@@ -50,16 +50,23 @@
                                     <tr *ngFor="let Article of  Articles ">
 
                                         <td class="py-1"> {{ Article.title}} </td>
-                                        <td class="py-4"> {{ Article.description}} </td>
+                                        <td class="py-4 " style="  padding: 25px;
+                                        overflow: hidden;
+                                        white-space: nowrap;
+                                        width: 100px;
+                                       
+                                        text-overflow: ellipsis; "> {{ Article.description}} </td>
                                         <td class="py-1"> {{ Article.DateAjout}}</td>
                                         <td class="py-1"> {{ Article.image}}</td>
                                         <td class="py-2">
 
                                             <button type="button" class="btn btn-outline-secondary btn-rounded btn-fw m"
-                                                (click)="deleteArticle(Article.id)">Supprimer</button>
+                                                (click)="deleteArticle(Article.id)">S</button>
 
                                             <button type="button" class="btn btn-outline-secondary btn-rounded btn-fw m"
-                                                routerLink="/UpdateArticle/{{Article.id}}"> Modifier </button>
+                                                routerLink="/UpdateArticle/{{Article.id}}"> M </button>
+                                            <button type="button" class="btn btn-outline-secondary btn-rounded btn-fw m"
+                                                routerLink="/listeCommentaire/{{Article.id}}"> C</button>
                                         </td>
                                     </tr>
                                 </tbody>
