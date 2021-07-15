@@ -27,7 +27,7 @@ export class UpdateArticleComponent implements OnInit {
 
       this.formArticle.controls['title'].setValue(this.Article.title);
       this.formArticle.controls['dateAjout'].setValue(this.Article.DateAjout);
-      this.formArticle.controls['description'].setValue(this.Article.Description);
+      this.formArticle.controls['description'].setValue(this.Article.description);
       this.formArticle.controls['image'].setValue(this.Article.image);
     });
   }

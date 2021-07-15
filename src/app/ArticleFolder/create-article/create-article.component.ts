@@ -9,9 +9,7 @@ import { ArticleService } from '../article.service';
   styleUrls: ['./create-article.component.css']
 })
 export class CreateArticleComponent implements OnInit {
-
-
-
+  formArticle = new FormGroup({
 
     title: new FormControl('', [Validators.required, Validators.minLength(3)]),
     dateAjout: new FormControl('', [Validators.required, Validators.minLength(3)]),
@@ -43,22 +41,21 @@ export class CreateArticleComponent implements OnInit {
 
 
       this.articleService.createArticle({
-       
-      'title': this.formArticle.get('title').value,
+
+        'title': this.formArticle.get('title').value,
         'description': this.formArticle.get('description').value,
         'DateAjout': this.formArticle.get('dateAjout').value,
         'image': this.formArticle.get('image').value,
 
 
-
+      }).then(() => {
 
 
         console.warn("success");
         this.router.navigate(['/Articles']);
 
-
-  // formArticle = new FormGroup({
-
+      })
+    }
 
   }
 
@@ -66,7 +63,7 @@ export class CreateArticleComponent implements OnInit {
     console.log(location.origin);
     console.log(location.href);
     console.log(location.pathname);
- 
+
   }
 
 

@@ -26,3 +26,40 @@
 .main-panel {
     margin-top: 49px;
 }
+.btn:not(:disabled):not(.disabled)
+{
+    margin-bottom: 15px;
+}
+
+
+table {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+    table-layout: fixed;
+  
+   
+
+  }
+
+
+  table td,
+  table th {
+    border: 1px solid #dadada;
+    padding: 5px;
+  }
+  table thead th {
+    text-align: left;
+
+  }
+  table thead th:nth-child(0),
+  table thead th:nth-child(1){
+    width: 20%;
+  }
+  
+  table thead th:nth-child(2){
+    width: 20%;
+  }
+  table thead th:nth-child(3){
+    width: 20%;
+  }
