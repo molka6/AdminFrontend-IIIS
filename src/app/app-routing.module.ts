@@ -19,6 +19,7 @@ import { CreateArticleComponent } from './ArticleFolder/create-article/create-ar
 import { MembreComponent } from './membre-Folder/membre/membre.component';
 import { LoginComponent } from './Auth/login/login.component';
 import{AuthGuardComponent} from './Auth/login/auth-guard/auth-guard.component' ; 
+import { Page404Component } from './404-Folder/page404/page404.component';
 const routes: Routes = [
   { path: 'Dashboard', component: DashboardComponent,canActivate: [AuthGuardComponent]  },
   { path: 'OffreEmploi', component: OffreEmploiComponent ,canActivate: [AuthGuardComponent]  },
@@ -42,6 +43,7 @@ const routes: Routes = [
   { path: 'membre', component:MembreComponent ,canActivate: [AuthGuardComponent] },
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
   { path: '', component:LoginComponent },
+  { path: '**', component:Page404Component   }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes), FormsModule,],

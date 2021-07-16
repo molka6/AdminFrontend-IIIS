@@ -27,6 +27,7 @@ import { LoginComponent } from './Auth/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AlertComponent } from './components/alert/alert.component';
 import { AuthGuardComponent } from './Auth/login/auth-guard/auth-guard.component';
+import { Page404Component } from './404-Folder/page404/page404.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { AuthGuardComponent } from './Auth/login/auth-guard/auth-guard.component
     LoginComponent,
     AlertComponent,
     AuthGuardComponent,
+    Page404Component,
   
     
 
