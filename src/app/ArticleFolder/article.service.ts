@@ -21,9 +21,20 @@ export class ArticleService {
 
   }
 
+
+
+
+  // createArticle(Article) {
+  //   return axios.post(`${this.UrlCreate}`, Article);
+  // }
+  // *
+  selectedFile = null;
+  OnFileSelected(event) {
+    this.selectedFile = event.target.files[0]
+  }
+
   createArticle(Article) {
     return axios.post(`${this.UrlCreate}`, Article);
-
   }
 
   async getOneArticle(id) {

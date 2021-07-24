@@ -21,22 +21,8 @@ export class MenuLeftComponent implements OnInit {
      console.log(this.currentUser.token) ; 
      console.log(this.currentUser.id) ; 
      console.log(this.currentUser.password) ; 
-  }
-
   
-//   currentUser: User;
-//   constructor(private router: Router,private authenticationService:  AuthService) {
-//     this.currentUser = this.authenticationService.currentUserValue;
-//             }
-
-
-
-//   ngOnInit(): void {
-//     console.log( this.authenticationService.currentUser)
-//     console.log( this.currentUser)
-    
-//   }
-
+  }
 
 
   logout() {

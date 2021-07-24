@@ -49,11 +49,22 @@
                                         <td> {{ partenaire.logo}} </td>
 
                                         <td class="py-2">
+
+                                            <button type="button" class="btn btn-icons btn-rounded btn-secondary"    [routerLink]="[dynamicParameter]" (click)="deletePartenaire(partenaire)">
+                                                <i class="fa fa-trash-o"></i>
+                                              </button>
+                        
+                                              <button type="button" class="btn btn-icons btn-rounded btn-secondary"    routerLink="/UpdatePartenaire/{{partenaire.id}}">
+                                                <i class="fa fa-edit"></i>
+                                              </button>
+
+
+<!-- 
                                             <button type="button" class="btn btn-outline-secondary btn-rounded btn-fw m"
                                             [routerLink]="[dynamicParameter]" (click)="deletePartenaire(partenaire)">Supprimer</button>
                       
                                             <button type="button" class="btn btn-outline-secondary btn-rounded btn-fw m" 
-                                            routerLink="/UpdatePartenaire/{{partenaire.id}}"> Modifier </button>
+                                            routerLink="/UpdatePartenaire/{{partenaire.id}}"> Modifier </button> -->
                                             </td> 
                                     </tr>
                                 </tbody>

@@ -29,7 +29,7 @@ export class AlertComponent implements OnInit {
           });
   }
 
-  ngOnDestroy() {
-      this.subscription.unsubscribe();
-  }
+//   ngOnDestroy() {
+//       this.subscription.unsubscribe();
+//   }
 }
