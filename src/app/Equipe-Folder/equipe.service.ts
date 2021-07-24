@@ -8,7 +8,7 @@ import 'rxjs/add/Operator/catch';
 })
 export class EquipeService {
   constructor(private http: Http) { }
-  private url = 'http://127.0.0.1:8000';
+  private url = 'https://127.0.0.1:8000';
   getpersonnes(): Observable<any[]> {
     const  headers = new Headers();
     return  this.http.get(this.url+ '/personne/' , {headers : headers}).map(res => <Equipe[]> res.json() ).catch(this.handelError);

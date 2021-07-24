@@ -6,10 +6,10 @@ import axios from 'axios';
   providedIn: 'root'
 })
 export class OffreEmploiService {
-  private BaseUrl = 'http://localhost:8000/offreEmploi';
-  private baseUrl1 = 'http://localhost:8000/createoffreEmploi';
-  private BaseUrlOffre = 'http://localhost:8000/getOffre';
-  private BaseUrlUpdate = 'http://localhost:8000/UpdateoffreEmploi/';
+  private BaseUrl = 'https://localhost:8000/offreEmploi';
+  private baseUrl1 = 'https://localhost:8000/createoffreEmploi';
+  private BaseUrlOffre = 'https://localhost:8000/getOffre';
+  private BaseUrlUpdate = 'https://localhost:8000/UpdateoffreEmploi/';
   constructor() { }
 
   createOffre(offre) {

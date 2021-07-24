@@ -5,13 +5,13 @@ import axios from 'axios';
   providedIn: 'root'
 })
 export class ArticleService {
-  BaseUrl = 'http://localhost:8000/Articles';
-  UrlCreate = 'http://localhost:8000/createArticle';
-  BaseUrlUpdate = 'http://localhost:8000/UpdateArticle/';
-  BaseUrlArticle = 'http://localhost:8000/getArticle';
-  UrlDelete = "http://localhost:8000/Article";
-  UrlComentaire = 'http://localhost:8000/Avis/';
-  UrlDeleteCommentaire = 'http://localhost:8000/Commentaire';
+  BaseUrl = 'https://localhost:8000/Articles';
+  UrlCreate = 'https://localhost:8000/createArticle';
+  BaseUrlUpdate = 'https://localhost:8000/UpdateArticle/';
+  BaseUrlArticle = 'https://localhost:8000/getArticle';
+  UrlDelete = "https://localhost:8000/Article";
+  UrlComentaire = 'https://localhost:8000/Avis/';
+  UrlDeleteCommentaire = 'https://localhost:8000/Commentaire';
 
   constructor() { }
 

@@ -7,11 +7,11 @@ export class PartenaireServiceService {
 
   constructor() { }
 
-  UrlPart = 'http://localhost:8000/Partenaire';
-  UrlCreate = 'http://localhost:8000/createPartenaire';
-  UrlOnePart = 'http://localhost:8000/getPartenaire';
-  UrlUpdate = 'http://localhost:8000/UpdatePartenaire/';
-  UrlDelete = 'http://localhost:8000/Partenaire';
+  UrlPart = 'https://localhost:8000/Partenaire';
+  UrlCreate = 'https://localhost:8000/createPartenaire';
+  UrlOnePart = 'https://localhost:8000/getPartenaire';
+  UrlUpdate = 'https://localhost:8000/UpdatePartenaire/';
+  UrlDelete = 'https://localhost:8000/Partenaire';
 
   async getAllPartenaire() {
 

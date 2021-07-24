@@ -11,18 +11,18 @@
     margin: 4px ;
 }
 
-
-
-
-.form-control {
-    border-radius: 27px;
-}
 .form-control:focus 
 {
     border-color:#ff6258;
     
 
 }
+
+
+.form-control {
+    border-radius: 27px;
+}
+
 .main-panel {
     margin-top: 49px;
 }

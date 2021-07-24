@@ -5,8 +5,8 @@ import axios from 'axios';
   providedIn: 'root'
 })
 export class ContactService {
-  UrlGet = ' http://localhost:8000/Contacts'
-  UrlGetOne = 'http://localhost:8000/Contact/';
+  UrlGet = ' https://localhost:8000/Contacts'
+  UrlGetOne = 'https://localhost:8000/Contact/';
   constructor() { }
 
 
