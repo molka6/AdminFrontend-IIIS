@@ -32,7 +32,7 @@ import { ContactComponent } from './ContactFolder/contact/contact.component';
 import { ContactDetaillsComponent } from './ContactFolder/contact-detaills/contact-detaills.component';
 import { CommentairesComponent } from './ArticleFolder/commentaires/commentaires.component';
 
-
+import {Page404Component} from './404-Folder/page404/page404.component';
 
 
 
@@ -61,6 +61,8 @@ import { CommentairesComponent } from './ArticleFolder/commentaires/commentaires
     LoginComponent,
     AlertComponent,
     AuthGuardComponent,
+    Page404Component,
+
     UpdateArticleComponent,
     ContactComponent,
     ContactDetaillsComponent,

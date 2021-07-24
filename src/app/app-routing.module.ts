@@ -24,7 +24,7 @@ import { ContactComponent } from './ContactFolder/contact/contact.component';
 import { ContactDetaillsComponent } from './ContactFolder/contact-detaills/contact-detaills.component';
 import { CommentairesComponent } from './ArticleFolder/commentaires/commentaires.component';
 const routes: Routes = [
-  { path: 'Dashboard', component: DashboardComponent },
+  { path: 'Dashboard', component: DashboardComponent  },
   { path: 'OffreEmploi', component: OffreEmploiComponent },
   { path: 'OffreEmploi/:id', component: OffreEmploiComponent },
   { path: 'CreateOffreEmploi', component: CreateOffreComponent, },

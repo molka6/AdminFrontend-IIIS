@@ -38,6 +38,8 @@
                             <th> Prenom</th>
                             <th> Role </th>
                             <th> Email </th>
+                             <th> Image </th>
+
 
                             <th  rowspan="2" > 
                               <div class="position">Action </div></th>          
@@ -50,17 +52,28 @@
                             <td class="py-1"> {{e.prenom}} </td> 
                             <td class="py-1"> {{e.role}} </td> 
                             <td class="py-1"> {{e.Email}} </td> 
-
+                            <td class="py-1">  <img src="http://127.0.0.1:8000/upload/{{e.Image}}"  class="tn" width="200" height="200"></td> 
                             <td class="py-2">
 
+                              
+                              <button type="button" class="btn btn-icons btn-rounded btn-secondary"      [routerLink]="[dynamicParameter]" (click)="deletePost(e.id)">
+                                <i class="fa fa-trash-o"></i>
+                              </button>
+        
+                              <button type="button" class="btn btn-icons btn-rounded btn-secondary"       routerLink="/UpdateEquipe/{{e.id}}">
+                                <i class="fa fa-edit"></i>
+                              </button>
 
-                               <button type="button" class="btn btn-outline-secondary btn-rounded btn-fw m"
-                              [routerLink]="[dynamicParameter]" (click)="deletePost(e.id)">Supprimer</button>
 
-    
+
+
+                               <!-- <button type="button" class="btn btn-outline-secondary btn-rounded btn-fw m"
+                              [routerLink]="[dynamicParameter]" (click)="deletePost(e.id)">Supprimer</button> -->
+
+<!--     
                               <button type="button" class="btn btn-outline-secondary btn-rounded btn-fw m" 
                               routerLink="/UpdateEquipe/{{e.id}}"> Modifier </button>
-                              </td> 
+                              </td>  -->
 
                           
 
