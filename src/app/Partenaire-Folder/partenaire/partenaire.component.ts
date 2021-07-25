@@ -9,11 +9,13 @@ import { PartenaireServiceService } from '../partenaire-service.service'
 })
 export class PartenaireComponent implements OnInit {
   PartenaireListe = [];
+  ImageListe=[];
 
   constructor(private partenaireServiceService: PartenaireServiceService, private router: Router) { }
 
   ngOnInit(): void {
-    this.partenaireServiceService.getAllPartenaire().then((resp) => { this.PartenaireListe = resp.data });
+    this.partenaireServiceService.getAllPartenaire().then((resp) => { this.PartenaireListe = resp.data ; console.log(this.PartenaireListe) });
+    // this.partenaireServiceService.getImage().then((resp) => { this.ImageListe = resp.data ; console.log(this.ImageListe)});
 
   }
 

@@ -1,63 +1,76 @@
+<div class="content-wrapper">
+    <div class="row page-title-header margi">
+        <div class="col-12">
+            <div class="page-header">
+                <h4 class="page-title ">Partenaire </h4>
+                <div class="quick-link-wrapper w-100 d-md-flex flex-md-wrap">
+                </div>
+            </div>
+        </div>
 
-            <div class="content-wrapper">
-                <div class="row page-title-header margi">
-                    <div class="col-12">
-                        <div class="page-header">
-                            <h4 class="page-title ">Partenaire </h4>
-                            <div class="quick-link-wrapper w-100 d-md-flex flex-md-wrap">
+    </div>
+    <!-- ************card************* -->
+    <div class="col-lg-12  stretch-card2 ">
+        <div class="card2">
+            <div class="card-body">
+                <h4 class="card-title2">Modifier un Partenaire</h4>
+                <!-- @@@@@@form@@@@@ -->
+                <form [formGroup]="formPartenaire">
+
+
+
+                    <div class="row">
+                        <div class="col-md-6 pr-1">
+                            <div class="form-group">
+                                <ng-container *ngIf=" logo  != '' ">
+
+                                    <label>Logo</label><br>
+                                    <img src="http://127.0.0.1:8000/upload/{{logo}}" width="200" height="200">
+
+                                    <button type="button" class="btn btn-icons btn-rounded btn-secondary" 
+                                        routerlink="[`/UpdatePartenaire/${id}]"
+                                        (click)="supprimerLogo()">
+                                        <i class="fa fa-trash-o"></i>
+                                    </button>
+                                </ng-container>
+                                <ng-container *ngIf=" logo  == '' ">
+
+                                    <div class="form-group">
+                                        <input type="file" (change)="uploadFile($event)">
+                                    </div>
+                                </ng-container>
+
+
                             </div>
                         </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-11 pr-1">
+                            <div class="form-group">
+                                <label>nom</label>
+                                <input formControlName="nom" type="text" class="form-control" placeholder="nom"
+                                    value="">
+                            </div>
+                        </div>
+
                     </div>
 
-                </div>
-                <!-- ************card************* -->
-                <div class="col-lg-12  stretch-card2 ">
-                    <div class="card2">
-                        <div class="card-body">
-                            <h4 class="card-title2">Modifier  un Partenaire</h4>
-                            <!-- @@@@@@form@@@@@ -->
-                            <form [formGroup]="formPartenaire">
-                                <div class="row">
-                                    <div class="col-md-11 pr-1">
-                                        <div class="form-group">
-                                            <label>nom</label>
-                                            <input formControlName="nom" type="text" class="form-control"
-                                                placeholder="nom" value="">
-                                        </div>
-                                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
 
-                                </div>
-
-
-                                <div class="row">
-                                    <div class="col-md-6 pr-1">
-                                        <div class="form-group">
-                                            <label>Logo</label>
-                                            <input formControlName="logo" type="text" class="form-control"
-                                                placeholder="logo" value="">
-                                        </div>
-                                    </div>
-
-                                </div>
-
-
-                                <div class="row">
-                                    <div class="col-md-12">
-
-                                        <button type="button" class="btn btn-secondary btn-rounded btn-fw btn-position"
-                                            routerLink="/Partenaire">Cancel</button>
-                                        <button class="btn btn-danger btn-rounded btn-fw  btn-position"
-
-                                            (click)="updatepartenaire($event)" type="submit">Submit</button>
-
-                                    </div>
-                                </div>
-                            </form>
-                            <!-- @@@end form @@@@àà -->
+                            <button type="button" class="btn btn-secondary btn-rounded btn-fw btn-position"
+                                routerLink="/Partenaire">Cancel</button>
+                            <button class="btn btn-danger btn-rounded btn-fw  btn-position"
+                                (click)="updatepartenaire($event)" type="submit">Submit</button>
 
                         </div>
                     </div>
-                </div>
-                <!-- ******endcard************* -->
+                </form>
+                <!-- @@@end form @@@@àà -->
+
             </div>
-           
+        </div>
+    </div>
+    <!-- ******endcard************* -->
+</div>
