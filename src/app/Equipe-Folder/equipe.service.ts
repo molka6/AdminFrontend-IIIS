@@ -36,7 +36,7 @@ export class EquipeService {
   }
 
   getImages() {
-    return this.http.get('http://127.0.0.1:8000/images').map( (res) => res.json());
+    return this.http.get('https://127.0.0.1:8000/images').map((res) => res.json());
   }
 
 
