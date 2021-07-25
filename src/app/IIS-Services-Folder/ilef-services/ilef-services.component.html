@@ -53,15 +53,32 @@
                                     <tr *ngFor="let Service of  ServiceListe ">
 
                                         <td class="py-1"> {{Service.title}} </td>
-                                        <td> {{Service.description}} </td>
+                                        <td style="  padding: 25px;
+                                        overflow: hidden;
+                                        white-space: nowrap;
+                                        width: 100px;
+                                       
+                                        text-overflow: ellipsis; "> {{Service.description}} </td>
 
                                         <td class="py-2">
+
+                                               
+                              <button type="button" class="btn btn-icons btn-rounded btn-secondary"        (click)="deleteService(Service.id)">
+                                <i class="fa fa-trash-o"></i>
+                              </button>
+        
+                              <button type="button" class="btn btn-icons btn-rounded btn-secondary"         routerLink="/UpdateService/{{Service.id}}">
+                                <i class="fa fa-edit"></i>
+                              </button>
+
+
+<!-- 
                                             <button type="button" class="btn btn-outline-secondary btn-rounded btn-fw m"
-                                                [routerLink]="[dynamicParameter]"
-                                                (click)="deleteOffre(offre)">Supprimer</button>
+                                               
+                                                (click)="deleteService(Service.id)">Supprimer</button>
 
                                             <button type="button" class="btn btn-outline-secondary btn-rounded btn-fw m"
-                                                routerLink="/UpdateService/{{Service.id}}"> Modifier </button>
+                                                routerLink="/UpdateService/{{Service.id}}"> Modifier </button> -->
                                         </td>
 
 

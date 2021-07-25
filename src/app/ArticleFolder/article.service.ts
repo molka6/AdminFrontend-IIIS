@@ -1,18 +1,19 @@
 import { Injectable } from '@angular/core';
 import axios from 'axios';
-import { Http, Headers, Response } from '@angular/http';
-import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ArticleService {
   BaseUrl = 'http://localhost:8000/Articles';
-  UrlCreate: 'http://localhost:8000/createArticle';
+  UrlCreate = 'http://localhost:8000/createArticle';
+  BaseUrlUpdate = 'http://localhost:8000/UpdateArticle/';
+  BaseUrlArticle = 'http://localhost:8000/getArticle';
+  UrlDelete = "http://localhost:8000/Article";
+  UrlComentaire = 'http://localhost:8000/Avis/';
+  UrlDeleteCommentaire = 'http://localhost:8000/Commentaire';
 
-  url="http://localhost:8000";
-
-  constructor(private http: Http) { }
+  constructor() { }
 
   async getAllArticles() {
 
@@ -20,28 +21,43 @@ export class ArticleService {
 
   }
 
+
+
+
   // createArticle(Article) {
   //   return axios.post(`${this.UrlCreate}`, Article);
-
   // }
-  
-  createArticle(article:Article) {
-    const headers = new Headers();
-    headers.append('content-type', 'application/json');
-    return this.http.post(this.url + '/createArticle', JSON.stringify(article), { headers: headers }).map(res => res.json()).catch(this.handelError);
+  // *
+  selectedFile = null;
+  OnFileSelected(event) {
+    this.selectedFile = event.target.files[0]
   }
 
-  private handelError(error: Response) {
-    return Observable.throw(error.json().errors || 'server error');
+  createArticle(Article) {
+    return axios.post(`${this.UrlCreate}`, Article);
+  }
+
+  async getOneArticle(id) {
+
+    return await axios.get(`${this.BaseUrlArticle}` + '/' + id);
+
+  }
+  async updateArticle(id, offre) {
+    return await axios.put(`${this.BaseUrlUpdate}` + id, offre);
 
   }
 
+  async getCommentaires(id) {
 
-}
+    return await axios.get(`${this.UrlComentaire}` + id);
 
-export class Article {
-  constructor(public id, public title: string, public description: string , public DateAjout: string ,public image: string ) {
+  }
 
+  async deleteArticle(id) {
+    return await axios.delete(this.UrlDelete + "/" + id)
+  }
+  async deleteCommentaire(id) {
+    return await axios.delete(this.UrlDeleteCommentaire + "/" + id)
   }
 
 }

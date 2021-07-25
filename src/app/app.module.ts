@@ -17,7 +17,7 @@ import { UpdatePartenaireComponent } from './Partenaire-Folder/update-partenaire
 import { IlefServicesComponent } from './IIS-Services-Folder/ilef-services/ilef-services.component';
 import { CreateServiceComponent } from './IIS-Services-Folder/create-service/create-service.component';
 import { HttpModule } from '@angular/http';
-import{ EquipeFormComponent} from  './equipe-Folder/equipe-form/equipe-form.component';
+import { EquipeFormComponent } from './equipe-Folder/equipe-form/equipe-form.component';
 import { UpdateEquipeComponent } from './equipe-Folder/update-equipe/update-equipe.component';
 import { UpdateServiceComponent } from './IIS-Services-Folder/update-service/update-service.component';
 import { ArticleComponent } from './ArticleFolder/article/article.component';
@@ -27,7 +27,14 @@ import { LoginComponent } from './Auth/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AlertComponent } from './components/alert/alert.component';
 import { AuthGuardComponent } from './Auth/login/auth-guard/auth-guard.component';
-import { Page404Component } from './404-Folder/page404/page404.component';
+import { UpdateArticleComponent } from './ArticleFolder/update-article/update-article.component';
+import { ContactComponent } from './ContactFolder/contact/contact.component';
+import { ContactDetaillsComponent } from './ContactFolder/contact-detaills/contact-detaills.component';
+import { CommentairesComponent } from './ArticleFolder/commentaires/commentaires.component';
+
+import {Page404Component} from './404-Folder/page404/page404.component';
+
+
 
 @NgModule({
   declarations: [
@@ -55,8 +62,11 @@ import { Page404Component } from './404-Folder/page404/page404.component';
     AlertComponent,
     AuthGuardComponent,
     Page404Component,
-  
-    
+
+    UpdateArticleComponent,
+    ContactComponent,
+    ContactDetaillsComponent,
+    CommentairesComponent,
 
   ],
   imports: [
@@ -70,7 +80,7 @@ import { Page404Component } from './404-Folder/page404/page404.component';
 
 
   ],
-  providers: [ AuthGuardComponent],
+  providers: [AuthGuardComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

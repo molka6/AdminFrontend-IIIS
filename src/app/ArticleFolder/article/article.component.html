@@ -50,17 +50,36 @@
                                     <tr *ngFor="let Article of  Articles ">
 
                                         <td class="py-1"> {{ Article.title}} </td>
-                                        <td class="py-4"> {{ Article.description}} </td>
+                                        <td class="py-4 " style="  padding: 25px;
+                                        overflow: hidden;
+                                        white-space: nowrap;
+                                        width: 100px;
+                                       
+                                        text-overflow: ellipsis; "> {{ Article.description}} </td>
                                         <td class="py-1"> {{ Article.DateAjout}}</td>
                                         <td class="py-1"> {{ Article.image}}</td>
                                         <td class="py-2">
 
-                                            <button type="button" class="btn btn-outline-secondary btn-rounded btn-fw m"
-                                                [routerLink]="[dynamicParameter]"
-                                                (click)="deleteArticle(Article)">Supprimer</button>
 
+                                            <button type="button" class="btn btn-icons btn-rounded btn-secondary"    (click)="deleteArticle(Article.id)">
+                                                <i class="fa fa-trash-o"></i>
+                                              </button>
+                        
+                                              <button type="button" class="btn btn-icons btn-rounded btn-secondary"   routerLink="/UpdateArticle/{{Article.id}}">
+                                                <i class="fa fa-edit"></i>
+                                              </button>
+
+                                              
+                                              <button type="button" class="btn btn-icons btn-rounded btn-secondary"   routerLink="/listeCommentaire/{{Article.id}}">
+                                                <i class="fa fa-comment"></i>
+                                              </button>
+
+                                            <!-- <button type="button" class="btn btn-outline-secondary btn-rounded btn-fw m"
+                                                (click)="deleteArticle(Article.id)">S</button>
                                             <button type="button" class="btn btn-outline-secondary btn-rounded btn-fw m"
-                                                routerLink="/UpdateArticle/{{Article.id}}"> Modifier </button>
+                                                routerLink="/UpdateArticle/{{Article.id}}"> M </button>
+                                            <button type="button" class="btn btn-outline-secondary btn-rounded btn-fw m"
+                                                routerLink="/listeCommentaire/{{Article.id}}"> C </button> -->
                                         </td>
                                     </tr>
                                 </tbody>

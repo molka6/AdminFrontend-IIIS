@@ -19,15 +19,15 @@ export class OffreEmploiComponent implements OnInit {
 
     this.offreEmploiService.getAllOffreEmploi().then((resp) => { this.offreEmploiListe = resp.data; });
   }
-  deleteOffre(element) {
+  deleteOffre(id) {
 
-    let dynamicParameter = this.OffreEmploiId(element);
-   
+    // let dynamicParameter = this.OffreEmploiId(element);
+
     var result = confirm("Cliquer sur OK pour confirmer la suppression ! ")
     if (result) {
-      this.offreEmploiService.deleteOffre(dynamicParameter).then(() => {
+      this.offreEmploiService.deleteOffre(id).then(() => {
 
-        this.router.navigate(['/OffreEmploi'])
+        window.location.reload();
       }
 
       )

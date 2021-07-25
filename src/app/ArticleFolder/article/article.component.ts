@@ -15,5 +15,16 @@ export class ArticleComponent implements OnInit {
 
     this.articleService.getAllArticles().then((resp) => { this.Articles = resp.data; console.log(this.Articles) });
   }
+  deleteArticle(id) {
 
+    var result = confirm("Cliquer sur OK pour confirmer la suppression ! ")
+    if (result) {
+      this.articleService.deleteArticle(id).then(() => {
+
+        window.location.reload();
+      }
+
+      )
+    }
+  }
 }
