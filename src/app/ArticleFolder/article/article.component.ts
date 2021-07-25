@@ -17,7 +17,7 @@ export class ArticleComponent implements OnInit {
     
     this.articleService.getImages().subscribe(
       (res) => {
-        // console.log(res.result);
+        console.log(res.result);
          this.visibleImages = res.result;
       }
     );

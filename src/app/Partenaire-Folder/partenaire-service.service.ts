@@ -5,6 +5,7 @@ import axios from 'axios';
 })
 export class PartenaireServiceService {
 
+
   constructor() { }
 
   UrlPart = 'https://localhost:8000/Partenaire';
@@ -12,6 +13,8 @@ export class PartenaireServiceService {
   UrlOnePart = 'https://localhost:8000/getPartenaire';
   UrlUpdate = 'https://localhost:8000/UpdatePartenaire/';
   UrlDelete = 'https://localhost:8000/Partenaire';
+  UrlImage=' https://localhost:8000/logos';
+  Urldeltelogo='https://localhost:8000/PartenaireLogo/';
 
   async getAllPartenaire() {
 
@@ -32,13 +35,24 @@ export class PartenaireServiceService {
   }
 
   async updatePartenaire(id, Partenaire) {
-    return await axios.put(`${this.UrlUpdate}` + id, Partenaire);
+    return await axios.post(`${this.UrlUpdate}` + id, Partenaire);
 
   }
 
   async deletePartenaire(id) {
 
     return await axios.delete(this.UrlDelete + "/" + id)
+
+  }
+  async getImage() {
+
+    return await axios.get(`${this.UrlImage}`);
+
+  }
+
+  async DeleteLogo(id) {
+
+    return await axios.get(`${this.Urldeltelogo}` + id);
 
   }
 

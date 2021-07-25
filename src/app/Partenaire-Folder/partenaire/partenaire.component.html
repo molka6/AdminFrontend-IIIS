@@ -41,7 +41,15 @@
                                     <tr *ngFor="let partenaire of  PartenaireListe ">
 
                                         <td class="py-1"> {{ partenaire.nom}} </td>
-                                        <td> {{ partenaire.logo}} </td>
+                                        <ng-container *ngIf=" partenaire.logo  != '' ">
+
+                                            <td class="py-1">  <img src="http://127.0.0.1:8000/upload/{{partenaire.logo}}" width="500" height="500"></td> 
+                                        </ng-container>
+                                        <ng-container *ngIf=" partenaire.logo  == '' ">
+
+                                            <td class="py-1">  Image non disponible  </td> 
+                                        </ng-container>
+                                       
 
                                         <td class="py-2">
 
