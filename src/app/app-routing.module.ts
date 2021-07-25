@@ -23,33 +23,45 @@ import { AuthGuardComponent } from './Auth/login/auth-guard/auth-guard.component
 import { ContactComponent } from './ContactFolder/contact/contact.component';
 import { ContactDetaillsComponent } from './ContactFolder/contact-detaills/contact-detaills.component';
 import { CommentairesComponent } from './ArticleFolder/commentaires/commentaires.component';
+import { MenuHeadComponent } from './menu-head-folder/menu-head/menu-head.component';
 const routes: Routes = [
-  { path: 'Dashboard', component: DashboardComponent  },
-  { path: 'OffreEmploi', component: OffreEmploiComponent },
-  { path: 'OffreEmploi/:id', component: OffreEmploiComponent },
-  { path: 'CreateOffreEmploi', component: CreateOffreComponent, },
-  { path: 'UpdateOffre/:id', component: UpdateOffreComponent, },
-  { path: 'Partenaire', component: PartenaireComponent, },
-  { path: 'CreatePartenaire', component: CreatePartenaireComponent, },
-  { path: 'UpdatePartenaire/:id', component: UpdatePartenaireComponent, },
-  { path: 'Partenaire/:id', component: PartenaireComponent, },
-  { path: 'Services', component: IlefServicesComponent, },
-  { path: 'CreateServiceIlef', component: CreateServiceComponent, },
-  { path: 'UpdateOffre/:id', component: UpdateOffreComponent, },
-  { path: 'UpdateEquipe/:id', component: UpdateEquipeComponent, },
-  { path: 'Equipe', component: EquipeComponent, },
-  { path: 'createEquipe', component: EquipeFormComponent, },
-  { path: 'UpdateService/:id', component: UpdateServiceComponent, },
-  { path: 'Articles', component: ArticleComponent, },
-  { path: 'CreateArticle', component: CreateArticleComponent, },
-  { path: 'createEquipe', component: EquipeFormComponent, },
-  { path: 'membre', component: MembreComponent, },
-  { path: 'UpdateArticle/:id', component: UpdateArticleComponent },
-  { path: 'Contact', component: ContactComponent },
-  { path: 'Contactdetaills/:id', component: ContactDetaillsComponent },
-  { path: 'listeCommentaire/:id', component: CommentairesComponent },
+
+
+  { path: '', 
+  // canActivate : [AuthGuardComponent ] , 
+  component:  MenuHeadComponent   , children : [
+    { path: 'Dashboard', component: DashboardComponent  },
+    { path: 'OffreEmploi', component: OffreEmploiComponent },
+    { path: 'OffreEmploi/:id', component: OffreEmploiComponent },
+    { path: 'CreateOffreEmploi', component: CreateOffreComponent, },
+    { path: 'UpdateOffre/:id', component: UpdateOffreComponent, },
+    { path: 'Partenaire', component: PartenaireComponent, },
+    { path: 'CreatePartenaire', component: CreatePartenaireComponent, },
+    { path: 'UpdatePartenaire/:id', component: UpdatePartenaireComponent, },
+    { path: 'Partenaire/:id', component: PartenaireComponent, },
+    { path: 'Services', component: IlefServicesComponent, },
+    { path: 'CreateServiceIlef', component: CreateServiceComponent, },
+    { path: 'UpdateOffre/:id', component: UpdateOffreComponent, },
+    { path: 'UpdateEquipe/:id', component: UpdateEquipeComponent, },
+    { path: 'Equipe', component: EquipeComponent, },
+    { path: 'createEquipe', component: EquipeFormComponent, },
+    { path: 'UpdateService/:id', component: UpdateServiceComponent, },
+    { path: 'Articles', component: ArticleComponent, },
+    { path: 'CreateArticle', component: CreateArticleComponent, },
+    { path: 'createEquipe', component: EquipeFormComponent, },
+    { path: 'membre', component: MembreComponent, },
+    { path: 'UpdateArticle/:id', component: UpdateArticleComponent },
+    { path: 'Contact', component: ContactComponent },
+    { path: 'Contactdetaills/:id', component: ContactDetaillsComponent },
+    { path: 'listeCommentaire/:id', component: CommentairesComponent },
+
+]} ,
+
+ { path: 'login', component: LoginComponent },
+  
+  
   // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-  { path: '', component: LoginComponent },
+ 
 
 ];
 @NgModule({

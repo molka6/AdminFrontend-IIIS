@@ -402,6 +402,8 @@
         padding: 10px 0px 10px 70px;
         position: relative;
         color: rgba(255, 255, 255, 0.8);
+        /* color: pink; */
+
         font-size: calc(15px - 2px);
         font-weight: 500;
         transition-duration: 0.5s;
@@ -548,8 +550,6 @@
   .sidebar-offcanvas {
     position: fixed;
     max-height: calc(100vh - 63px);
-
-    
     top: 63px;
     bottom: 0;
     overflow: auto;
@@ -577,7 +577,8 @@
       width: 100%; } }
 
 .navbar.fixed-top + .page-body-wrapper {
-  padding-top: 63px; }
+  padding-top: 63px;
+ }
 
 .purchase-banner-active .navbar.fixed-top {
   top: 55px; }

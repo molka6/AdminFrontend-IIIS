@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
-
+import { Component } from '@angular/core'; 
+import{  AuthService} from './Auth/auth.service';
+import {User} from './models/user';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,4 +10,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'AdminFrontend';
+ 
+
 }
+

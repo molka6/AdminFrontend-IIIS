@@ -1,73 +1,45 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ArticleService } from '../article.service';
-
+import { Http } from '@angular/http';
 @Component({
   selector: 'app-create-article',
   templateUrl: './create-article.component.html',
   styleUrls: ['./create-article.component.css']
 })
 export class CreateArticleComponent implements OnInit {
-  formArticle = new FormGroup({
-    title: new FormControl('', [Validators.required, Validators.minLength(3)]),
-    dateAjout: new FormControl('', [Validators.required, Validators.minLength(3)]),
-    description: new FormControl('', [Validators.required, Validators.minLength(3)]),
-    image: new FormControl('', [Validators.required, Validators.minLength(3)]),
+  form = new FormGroup({
+    title: new FormControl('', [Validators.required]),
+    DateAjout: new FormControl('', [Validators.required]),
+    description: new FormControl('', [Validators.required]),
+    image: new FormControl('null', [Validators.required]),
   });
   Articles = [];
-
-
-  constructor(private articleService: ArticleService, private router: Router) { }
-
-
-
+  constructor(private router: Router,private http: Http) { }
   ngOnInit(): void {
-    this.articleService.getAllArticles().then((resp) => { this.Articles = resp.data; console.log(this.Articles) });
-    // this.foo();
   }
+  elem;
+  uploadFile(event) {
+    this.elem = event.target;
+    console.log(this.elem.files[0]);
+    this.form.patchValue({
+      image: this.elem.files[0]
 
-
-
-  submitArticle(e) {
-    console.log(e.preventDefault());
-    e.stopPropagation()
-
-    {
-      // console.warn(this.formArticle.get('title').value);
-      // console.warn(this.formArticle.get('description').value);
-      // console.warn(this.formArticle.get('dateAjout').value);
-      // console.warn(this.formArticle.get('image').value);
-      // console.log(location.origin);
-      // console.log(location.href);
-      // console.log(location.pathname);
-
-
-
-      this.articleService.createArticle({
-        'title': this.formArticle.get('title').value,
-        'description': this.formArticle.get('description').value,
-        'DateAjout': this.formArticle.get('dateAjout').value,
-        'image': this.formArticle.get('image').value,
-      }).then(() => {
-        console.warn("success");
-        this.router.navigate(['/Articles']);
-
-      })
-    }
-
+    });
+    this.form.get('image').updateValueAndValidity()
   }
-
-  // foo(): void {
-  //   console.log(location.origin);
-  //   console.log(location.href);
-  //   console.log(location.pathname);
-
-  // }
-
-  selectedFile = null;
-  OnFileSelected(event) {
-    this.articleService.OnFileSelected(event);
+  submitForm() {
+    console.log(this.form.value)
+    var formData: any = new FormData();
+    formData.append("file", this.elem.files[0]);
+    formData.append("title", this.form.get('title').value);
+    formData.append("DateAjout", this.form.get('DateAjout').value);
+    console.log(this.form.get('DateAjout').value)
+    formData.append("description", this.form.get('description').value);
+    this.http.post('http://127.0.0.1:8000/createArticle', formData).subscribe(
+      (response) => console.log(response),
+      (error) => console.log(error)
+    )
+    this.router.navigate(['/Articles']);
   }
-
 }
