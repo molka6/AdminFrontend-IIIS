@@ -17,14 +17,6 @@ export class EquipeService {
     const headers = new Headers();
     return this.http.delete(this.url + '/delete/' + id, { headers: headers }).map(res => res.json());
   }
-
-  addPost(equipe: Equipe) {
-    const headers = new Headers();
-    headers.append('content-type', 'multipart/form-data');
-    return this.http.post(this.url + '/createpersonne', JSON.stringify(equipe), { headers: headers }).map(res => res.json()).catch(this.handelError);
-  }
-
-
   updatePost(equipe: Equipe, id) {
     const headers = new Headers();
     headers.append('content-type', 'application/json');
@@ -38,7 +30,7 @@ export class EquipeService {
   getImages() {
     return this.http.get('https://127.0.0.1:8000/images').map((res) => res.json());
   }
-
+  
 
   private handelError(error: Response) {
     return Observable.throw(error.json().errors || 'server error');

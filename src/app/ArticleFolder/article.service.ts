@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import axios from 'axios';
-
+import { Http } from '@angular/http';
 @Injectable({
   providedIn: 'root'
 })
@@ -13,7 +13,7 @@ export class ArticleService {
   UrlComentaire = 'https://localhost:8000/Avis/';
   UrlDeleteCommentaire = 'https://localhost:8000/Commentaire';
 
-  constructor() { }
+  constructor(private http: Http) { }
 
   async getAllArticles() {
 
@@ -59,6 +59,12 @@ export class ArticleService {
   async deleteCommentaire(id) {
     return await axios.delete(this.UrlDeleteCommentaire + "/" + id)
   }
+
+  getImages() {
+    return this.http.get('http://127.0.0.1:8000/images').map( (res) => res.json());
+  }
+  
+
 
 }
 
