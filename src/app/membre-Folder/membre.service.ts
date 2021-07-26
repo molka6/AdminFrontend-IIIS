@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class MembreService {
 
   constructor(private http: Http) { }
-  private url = 'https://127.0.0.1:8000';
+  private url = 'http://127.0.0.1:8000';
 
 
 

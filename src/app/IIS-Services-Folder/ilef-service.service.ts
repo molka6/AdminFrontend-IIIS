@@ -5,11 +5,11 @@ import axios from 'axios';
 })
 export class IlefServiceService {
 
-  UrlService = 'https://localhost:8000/IlefService';
-  UrlCreate = 'https://localhost:8000/createService';
-  UrlUpdate = 'https://localhost:8000/UpdateService/';
-  UrlOneService = 'https://localhost:8000/getService';
-  UrlDelete = 'https://localhost:8000/Service';
+  UrlService = 'http://localhost:8000/IlefService';
+  UrlCreate = 'http://localhost:8000/createService';
+  UrlUpdate = 'http://localhost:8000/UpdateService/';
+  UrlOneService = 'http://localhost:8000/getService';
+  UrlDelete = 'http://localhost:8000/Service';
   constructor() { }
 
   async deleteService(id) {

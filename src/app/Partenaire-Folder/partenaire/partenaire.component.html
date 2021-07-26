@@ -45,9 +45,10 @@
 
                                             <td class="py-1">  <img src="http://127.0.0.1:8000/upload/{{partenaire.logo}}" width="500" height="500"></td> 
                                         </ng-container>
+
                                         <ng-container *ngIf=" partenaire.logo  == '' ">
 
-                                            <td class="py-1">  Image non disponible  </td> 
+                                             <td class="py-1"> <img src="../../../assets/images/user.png" width="500" height="500">  </td> 
                                         </ng-container>
                                        
 
@@ -60,14 +61,6 @@
                                               <button type="button" class="btn btn-icons btn-rounded btn-secondary"    routerLink="/UpdatePartenaire/{{partenaire.id}}">
                                                 <i class="fa fa-edit"></i>
                                               </button>
-
-
-<!-- 
-                                            <button type="button" class="btn btn-outline-secondary btn-rounded btn-fw m"
-                                            [routerLink]="[dynamicParameter]" (click)="deletePartenaire(partenaire)">Supprimer</button>
-                      
-                                            <button type="button" class="btn btn-outline-secondary btn-rounded btn-fw m" 
-                                            routerLink="/UpdatePartenaire/{{partenaire.id}}"> Modifier </button> -->
                                             </td> 
                                     </tr>
                                 </tbody>
