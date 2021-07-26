@@ -8,23 +8,35 @@ import { ArticleService } from '../article.service'
 })
 export class ArticleComponent implements OnInit {
   Articles = [];
-
+  visibleImages: any[] = [];
   constructor(private articleService: ArticleService) { }
 
   ngOnInit(): void {
 
     this.articleService.getAllArticles().then((resp) => { this.Articles = resp.data; console.log(this.Articles) });
-  }
-  deleteArticle(id) {
+    
+    this.articleService.getImages().subscribe(
+      (res) => {
+        // console.log(res.result);
+         this.visibleImages = res.result;
+      }
+    );
 
+  
+  
+  }
+  deleteArticle(id ,e) {
+    e.preventDefault(); 
     var result = confirm("Cliquer sur OK pour confirmer la suppression ! ")
     if (result) {
       this.articleService.deleteArticle(id).then(() => {
-
+  
         window.location.reload();
+     
       }
 
       )
     }
   }
 }
+

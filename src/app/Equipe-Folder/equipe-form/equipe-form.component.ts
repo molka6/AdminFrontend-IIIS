@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { EquipeService, } from './../equipe.service';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Http, Headers, Response, RequestOptions } from '@angular/http';
+import { Http } from '@angular/http';
 @Component({
   selector: 'app-equipe-form',
   templateUrl: './equipe-form.component.html',
@@ -41,6 +40,7 @@ export class EquipeFormComponent implements OnInit {
       (response) => console.log(response),
       (error) => console.log(error)
     )
+    this.router.navigate(['/Equipe']);
   }
 
 }
