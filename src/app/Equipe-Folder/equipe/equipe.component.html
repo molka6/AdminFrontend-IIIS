@@ -33,46 +33,55 @@
                             <th> Prenom</th>
                             <th> Role </th>
                             <th> Email </th>
-                             <th> Image </th>
-
-
-                            <th  rowspan="2" > 
-                              <div class="position">Action </div></th>          
-
+                            <th> Image </th>
+                            <th  > 
+                              <div class="position">Action </div>
+                            </th>          
                           </tr>
                         </thead>
                         <tbody>
+
                           <tr *ngFor="let e of equipe " > 
-                            <td class="py-1"> {{e.nom}} </td>
-                            <td class="py-1"> {{e.prenom}} </td> 
-                            <td class="py-1"> {{e.role}} </td> 
-                            <td class="py-1"> {{e.Email}} </td> 
-                            <td class="py-1">  <img src="http://127.0.0.1:8000/upload/{{e.Image}}" width="500" height="500"></td> 
-                            <td class="py-2">
+                                <td class="py-1"> {{e.nom}} </td>
+                                <td class="py-1"> {{e.prenom}} </td> 
+                               
+                                <td class="py-4 description" style="padding: 25px;
+                                overflow: hidden;
+                                white-space: nowrap;
+                                width: 100px;
+                               
+                                text-overflow: ellipsis; "> {{e.role}} </td> 
 
-                              
-                              <button type="button" class="btn btn-icons btn-rounded btn-secondary"      [routerLink]="[dynamicParameter]" (click)="deletePost(e.id)">
-                                <i class="fa fa-trash-o"></i>
-                              </button>
-        
-                              <button type="button" class="btn btn-icons btn-rounded btn-secondary"       routerLink="/UpdateEquipe/{{e.id}}">
-                                <i class="fa fa-edit"></i>
-                              </button>
+                                                              
+                                <td class="py-4 description" style="padding: 25px;
+                                overflow: hidden;
+                                white-space: nowrap;
+                                width: 100px;
+
+                                text-overflow: ellipsis; "> {{e.Email}} </td> 
+
+                                <td class="py-2"> 
+                                  <ng-container *ngIf=" e.Image  != '' ">
+                                    <img src="http://127.0.0.1:8000/upload/{{e.Image}}" width="500" height="500"> 
+                                  </ng-container>
+                                  <ng-container *ngIf=" e.Image == '' ">
+                                      <img src="../../../assets/images/user.png" width="500" height="500">  
+                                  </ng-container>
+                                </td>  
+                                
+                                
+                                  <td class="py-2">
+                                    <button type="button" class="btn btn-icons btn-rounded btn-secondary"      [routerLink]="[dynamicParameter]" (click)="deletePost(e.id)">
+                                      <i class="fa fa-trash-o"></i>
+                                    </button>
+              
+                                    <button type="button" class="btn btn-icons btn-rounded btn-secondary"       routerLink="/UpdateEquipe/{{e.id}}">
+                                      <i class="fa fa-edit"></i>
+                                    </button> 
+                                  </td>
 
 
-
-
-                               <!-- <button type="button" class="btn btn-outline-secondary btn-rounded btn-fw m"
-                              [routerLink]="[dynamicParameter]" (click)="deletePost(e.id)">Supprimer</button> -->
-
-<!--     
-                              <button type="button" class="btn btn-outline-secondary btn-rounded btn-fw m" 
-                              routerLink="/UpdateEquipe/{{e.id}}"> Modifier </button>
-                              </td>  -->
-
-                          
-
-             </tr> 
+                          </tr>
                         </tbody>
                       </table>
                     </div>

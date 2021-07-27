@@ -20,12 +20,12 @@ export class EquipeComponent implements OnInit {
         this.equipe = data;
       });
 
-    this.equipeService.getImages().subscribe(
-        (res) => {
-          console.log(res.result);
-           this.visibleImages = res.result;
-        }
-      );
+    // this.equipeService.getImages().subscribe(
+    //     (res) => {
+    //       console.log(res.result);
+    //        this.visibleImages = res.result;
+    //     }
+    //   );
 
   }
 

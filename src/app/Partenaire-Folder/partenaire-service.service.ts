@@ -8,13 +8,13 @@ export class PartenaireServiceService {
 
   constructor() { }
 
-  UrlPart = 'https://localhost:8000/Partenaire';
-  UrlCreate = 'https://localhost:8000/createPartenaire';
-  UrlOnePart = 'https://localhost:8000/getPartenaire';
-  UrlUpdate = 'https://localhost:8000/UpdatePartenaire/';
-  UrlDelete = 'https://localhost:8000/Partenaire';
-  UrlImage=' https://localhost:8000/logos';
-  Urldeltelogo='https://localhost:8000/PartenaireLogo/';
+  UrlPart = 'http://localhost:8000/Partenaire';
+  UrlCreate = 'http://localhost:8000/createPartenaire';
+  UrlOnePart = 'http://localhost:8000/getPartenaire';
+  UrlUpdate = 'http://localhost:8000/UpdatePartenaire/';
+  UrlDelete = 'http://localhost:8000/Partenaire';
+  UrlImage=' http://localhost:8000/logos';
+  Urldeltelogo='http://localhost:8000/PartenaireLogo/';
 
   async getAllPartenaire() {
 
