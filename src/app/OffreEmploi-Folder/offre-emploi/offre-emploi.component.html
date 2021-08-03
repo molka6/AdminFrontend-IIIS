@@ -44,7 +44,16 @@
                 <tbody>
                   <tr *ngFor="let offre of  offreEmploiListe ">
 
-                    <td class="py-1"> {{ offre.title}} </td>
+                    <td class="py-1 description" style="padding: 25px;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    width: 100px;
+                   
+                    text-overflow: ellipsis; ">
+                     {{ offre.title}} </td>
+
+
+
                     <td class="py-4 description" style="padding: 25px;
                     overflow: hidden;
                     white-space: nowrap;

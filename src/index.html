@@ -25,7 +25,34 @@
   <!-- >>>>>>>>>>>>>>>>>>>>>>>>>><authentification>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> --> 
 	<link rel="stylesheet" type="text/css" href="assets/Auth/css/util.css">
 	<link rel="stylesheet" type="text/css" href="assets/Auth/css/main.css"> 
-  <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
+  <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>carousel>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/ddsmoothmenu.js"></script>
+    <script type="text/JavaScript" src="js/cloud-carousel.1.0.5.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#carousel1").CloudCarousel(
+                {
+                    reflHeight: 40,
+                    reflGap: 2,
+                    titleBox: $('#da-vinci-title'),
+                    altBox: $('#da-vinci-alt'),
+                    buttonLeft: $('#slider-left-but'),
+                    buttonRight: $('#slider-right-but'),
+                    yRadius: 30,
+                    xPos: 480,
+                    yPos: 32,
+                    speed: 0.15,
+                    autoRotate: "yes",
+                    autoRotateDelay: 1500
+                }
+            );
+        });
+
+    </script>
+
+
+
 </head>
 <body>
   <app-root></app-root>

@@ -4,22 +4,22 @@ import axios from 'axios';
 @Injectable({
   providedIn: 'root'
 })
-export class ContactService {
-  UrlGet = ' http://localhost:8000/Contacts'
-  UrlGetOne = 'http://localhost:8000/Contact/';
+export class CondidatureService {
+  UrlGet = 'http://localhost:8000/api/candidatures'
+  UrlGetOne= 'http://localhost:8000/api/candidatures'
+
   constructor() { }
 
-
-  async getAllContact() {
-
+  async getAllCandidature(){
     return await axios.get(`${this.UrlGet}`);
-
   }
 
-
-  async getOneContact(id) {
+  async getOneCandidature(id) {
 
     return await axios.get(`${this.UrlGetOne}` + id);
 
   }
+
+
 }
+ 
