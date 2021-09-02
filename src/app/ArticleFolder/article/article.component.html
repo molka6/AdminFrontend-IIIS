@@ -64,19 +64,20 @@
 
                                         <td class="py-2">
 
+                                            
+                      <button   (click)="deleteArticle(Article.id ,$event)"    style=" width: 50px ;"type="button" class="btn btn-icons btn-inverse-secondary">
+                        <i class="fa fa-trash-o"></i>
+                      </button>
 
-                                            <button type="button" class="btn btn-icons btn-rounded btn-secondary"    (click)="deleteArticle(Article.id ,$event)">
-                                                <i class="fa fa-trash-o"></i>
-                                              </button>
-                        
-                                              <button type="button" class="btn btn-icons btn-rounded btn-secondary"   routerLink="/UpdateArticle/{{Article.id}} ">
-                                                <i class="fa fa-edit"></i>
-                                              </button>
+                      <button routerLink="/UpdateArticle/{{Article.id}} "   style=" width: 50px ;"type="button" class="btn btn-icons btn-inverse-secondary">
+                        <i class="fa fa-edit"></i>
+                      </button>
 
-                                              
-                                              <button type="button" class="btn btn-icons btn-rounded btn-secondary"   routerLink="/listeCommentaire/{{Article.id}}">
-                                                <i class="fa fa-comment"></i>
-                                              </button>
+                      <button  routerLink="/listeCommentaire/{{Article.id}}"   style=" width: 50px ;"type="button" class="btn btn-icons btn-inverse-secondary">
+                        <i class="fa fa-comment"></i>
+                      </button>
+
+
 
                                          
                                         </td>

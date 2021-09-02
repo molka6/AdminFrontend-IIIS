@@ -32,7 +32,7 @@ import { ContactDetaillsComponent } from './ContactFolder/contact-detaills/conta
 import { CommentairesComponent } from './ArticleFolder/commentaires/commentaires.component';
 
 import {Page404Component} from './404-Folder/page404/page404.component';
-import { CandidatureComponent } from './candidatureFolder/candidature/candidature.component';
+import { CandidatureComponent } from './OffreEmploi-Folder/candidature/candidature.component';
 
 
 
@@ -78,6 +78,7 @@ import { CandidatureComponent } from './candidatureFolder/candidature/candidatur
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    
     HttpModule
 
 

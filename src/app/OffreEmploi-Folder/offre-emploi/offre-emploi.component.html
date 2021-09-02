@@ -64,17 +64,23 @@
                     <td class="py-2">
 
 
-                      <button type="button" class="btn btn-icons btn-rounded btn-secondary"    (click)="deleteOffre(offre.id)">
+                    
+                      <button   (click)="deleteOffre(offre.id)"    style=" width: 100px ;"type="button" class="btn btn-icons btn-inverse-secondary">
                         <i class="fa fa-trash-o"></i>
                       </button>
 
-                      <button type="button" class="btn btn-icons btn-rounded btn-secondary"   routerLink="/UpdateOffre/{{offre.id}}">
+                      <button routerLink="/UpdateOffre/{{offre.id}}"   style=" width: 100px ;"type="button" class="btn btn-icons btn-inverse-secondary">
                         <i class="fa fa-edit"></i>
+                      </button>
+
+                      <button  routerLink="/candidature/{{offre.id}}"   style=" width: 100px ;"type="button" class="btn btn-icons btn-inverse-secondary">
+                        <i class="fa fa-file-pdf-o"></i> 
                       </button>
 
 
 
-                      
+
+        
                     </td>
                   </tr>
                 </tbody>

@@ -24,8 +24,8 @@ import { ContactComponent } from './ContactFolder/contact/contact.component';
 import { ContactDetaillsComponent } from './ContactFolder/contact-detaills/contact-detaills.component';
 import { CommentairesComponent } from './ArticleFolder/commentaires/commentaires.component';
 import { MenuHeadComponent } from './menu-head-folder/menu-head/menu-head.component';
-import { CandidatureComponent } from './candidatureFolder/candidature/candidature.component';
-
+// import { CandidatureComponent } from './candidatureFolder/candidature/candidature.component';
+import { CandidatureComponent } from  './OffreEmploi-Folder/candidature/candidature.component';
 
 
 const routes: Routes = [
@@ -58,10 +58,7 @@ const routes: Routes = [
     { path: 'Contact', component: ContactComponent },
     { path: 'Contactdetaills/:id', component: ContactDetaillsComponent },
     { path: 'listeCommentaire/:id', component: CommentairesComponent },
-    { path: 'Candidature', component: CandidatureComponent},
-
-
-
+    { path: 'candidature/:id', component: CandidatureComponent},
 
 ]} ,
 
