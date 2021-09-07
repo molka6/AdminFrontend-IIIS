@@ -10,7 +10,7 @@ import { EquipeService, Equipe } from '../equipe.service';
 export class EquipeComponent implements OnInit {
   equipe: Equipe[];
   visibleImages: any[] = [];
-
+  isDataLoading =true ; 
   
   constructor(private equipeService: EquipeService) { }
   async ngOnInit() {
@@ -18,6 +18,7 @@ export class EquipeComponent implements OnInit {
       .getpersonnes()
       .subscribe((data: Equipe[]) => {
         this.equipe = data;
+        this.isDataLoading =false ; 
       });
 
     // this.equipeService.getImages().subscribe(
