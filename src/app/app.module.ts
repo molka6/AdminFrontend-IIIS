@@ -33,6 +33,7 @@ import { CommentairesComponent } from './ArticleFolder/commentaires/commentaires
 
 import {Page404Component} from './404-Folder/page404/page404.component';
 import { CandidatureComponent } from './OffreEmploi-Folder/candidature/candidature.component';
+import { LoadingComponent } from './loading/loading.component';
 
 
 
@@ -68,6 +69,7 @@ import { CandidatureComponent } from './OffreEmploi-Folder/candidature/candidatu
     ContactDetaillsComponent,
     CommentairesComponent,
     CandidatureComponent,
+    LoadingComponent,
  
 
   ],
