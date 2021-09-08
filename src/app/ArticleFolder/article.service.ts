@@ -5,7 +5,7 @@ import { Http } from '@angular/http';
   providedIn: 'root'
 })
 export class ArticleService {
-  BaseUrl = 'http://localhost:8000/Articles';
+  BaseUrl = 'http://localhost:8000/Article';
   UrlCreate = 'http://localhost:8000/createArticle';
   BaseUrlUpdate = 'http://localhost:8000/UpdateArticle/';
   BaseUrlArticle = 'http://localhost:8000/getArticle';
