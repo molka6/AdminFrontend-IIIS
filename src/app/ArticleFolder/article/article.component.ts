@@ -21,9 +21,6 @@ export class ArticleComponent implements OnInit {
          this.visibleImages = res.result;
       }
     );
-
-  
-  
   }
   deleteArticle(id ,e) {
     e.preventDefault(); 

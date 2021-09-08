@@ -10,14 +10,16 @@ import { OffreEmploiService } from '../offre-emploi.service';
 })
 export class OffreEmploiComponent implements OnInit {
   public offreEmploiListe = [];
-
+  isDataLoading =true ; 
   // constructor() { }
   constructor(private offreEmploiService: OffreEmploiService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
 
 
-    this.offreEmploiService.getAllOffreEmploi().then((resp) => { this.offreEmploiListe = resp.data; });
+    this.offreEmploiService.getAllOffreEmploi().then((resp) => { this.offreEmploiListe = resp.data;
+      this.isDataLoading =false ;   });
+  
   }
   deleteOffre(id) {
 

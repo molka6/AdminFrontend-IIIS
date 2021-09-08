@@ -8,12 +8,13 @@ import { ContactService } from '../contact.service'
 })
 export class ContactComponent implements OnInit {
   ContactListe = [];
-
+  isDataLoading =true ; 
   constructor(private ContactService: ContactService) { }
 
   ngOnInit(): void {
 
-    this.ContactService.getAllContact().then((resp) => { this.ContactListe = resp.data; console.log(this.ContactListe) });
+    this.ContactService.getAllContact().then((resp) => { this.ContactListe = resp.data; 
+      this.isDataLoading =false ; console.log(this.ContactListe) });
   }
 
 }
