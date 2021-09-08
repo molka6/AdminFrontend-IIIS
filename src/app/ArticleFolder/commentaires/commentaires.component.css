@@ -2,3 +2,37 @@
 {
     margin-bottom: 15px;
 }
+.dropdown-toggle
+{
+    background-color: rgba(255, 98, 88, 0.2);
+    border-bottom-right-radius: 21px;
+    height: 34px;
+    border-top-right-radius: 23px;
+    /* background-color: #ff6258; */
+    /* border-radius: 14px; */
+    margin-left: 0px;
+    width: 35px;
+    margin-top: 6px;
+}
+.btn:not(:disabled)
+{
+    margin-right: 0px;
+}
+.btn-group 
+{
+    border: none;
+}
+.dropdown-menu
+{
+    position: absolute;
+    /* transform: translate3d(-26px, -81px, 0px)!important; */
+    top: 0px;
+    /* left: 0px; */
+    will-change: transform;
+}
+.btn-inverse-danger.hover, .btn-inverse-danger:hover, .show > .btn-inverse-danger.dropdown-toggl
+{
+    background-color: rgba(255, 98, 88, 0.2);
+    color: red ;
+    border : none;
+}

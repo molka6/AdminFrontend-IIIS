@@ -61,12 +61,25 @@ export class ArticleService {
   }
 
   getImages() {
-    return this.http.get('http://127.0.0.1:8000/images').map( (res) => res.json());
+    return this.http.get('http://127.0.0.1:8000/images').map((res) => res.json());
   }
-  
 
+  async updateAvis(id, data) {
+
+
+    axios.defaults.baseURL = 'https://127.0.0.1:8000/';
+    return await axios.patch(`api/avis/` + id, data, {
+      data: {
+        'Content-Type': 'application/merge-patch+json'
+
+      }
+
+    })
+
+  }
 
 }
+
 
 
 

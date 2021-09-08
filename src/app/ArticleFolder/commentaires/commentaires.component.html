@@ -1,63 +1,75 @@
+<div class="content-wrapper">
+    <div class="row page-title-header margi">
+        <div class="col-12">
+            <div class="page-header">
+                <h4 class="page-title "> liste des commentaires de l'article {{Article.title}}</h4>
+            </div>
+        </div>
 
-            <div class="content-wrapper">
-                <div class="row page-title-header margi">
-                    <div class="col-12">
-                        <div class="page-header">
-                            <h4 class="page-title "> liste des commentaires de l'article {{Article.title}}</h4>
+    </div>
+
+
+
+    <div *ngIf="!(Commentaires?.length > 0)">
+        <p style="font-family: 'Material Design Icons';    font-size: 20px;">Il n'ya pas de commentaires
+            pour cet article</p>
+    </div>
+    <!-- ************Table ************* -->
+    <div class="col-lg-12  stretch-card " *ngFor="let Commentaire of Commentaires ">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-lg-8  stretch-card ">
+                        <h1 class="card-title" style="font-size: 27px;">{{Commentaire.nom}}
+                            {{Commentaire.prenom}}
+
+                        </h1>
+
+                    </div>
+                    <div class="col-lg-2 stretch-card ">
+                        <button type="button" class="btn btn-inverse-danger btn-rounded btn-fw m1"
+                            (click)="deleteCommentaire(Commentaire.id)">supprimer</button>
+                    </div>
+                    <div class="col-lg-2 stretch-card ">
+
+
+                        <div class="btn-group">
+                            <button class="btn btn-inverse-danger btn-rounded btn-fw back"> publier </button>
+                            <button data-toggle="dropdown" class="dropdown-toggle"><span
+                                    class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                                <li><a (click)="publier(Commentaire.id)" >oui</a></li>
+                                <li><a (click)="cacher(Commentaire.id)">non</a></li>
+                               
+                            </ul>
                         </div>
                     </div>
 
                 </div>
 
-
-
-                <div *ngIf="!(Commentaires?.length > 0)">
-                    <p style="font-family: 'Material Design Icons';    font-size: 20px;">Il n'ya pas de commentaires
-                        pour cet article</p>
-                </div>
-                <!-- ************Table ************* -->
-                <div class="col-lg-12  stretch-card " *ngFor="let Commentaire of Commentaires ">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-lg-10  stretch-card ">
-                                    <h1 class="card-title" style="font-size: 27px;">{{Commentaire.nom}}
-                                        {{Commentaire.prenom}}
-
-                                    </h1>
-
-                                </div>
-                                <div class="col-lg-2 stretch-card ">
-                                    <button type="button" class="btn btn-inverse-danger btn-rounded btn-fw m1"
-                                        (click)="deleteCommentaire(Commentaire.id)">supprimer</button>
-                                </div>
-
-                            </div>
-
-                            <div class="row">
-                                <div class="col-lg-10  stretch-card ">
-                                    <h1 class="card-title" style="color: #5a5a5a;     margin-bottom: -24px;
+                <div class="row">
+                    <div class="col-lg-10  stretch-card ">
+                        <h1 class="card-title" style="color: #5a5a5a;     margin-bottom: -24px;
                                      margin-top: -15px;">{{Commentaire.date}} </h1>
 
 
-                                </div>
-
-
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-10">
-                                    <p style="font-size: 17px;color:black">{{Commentaire.contenu}} </p>
-                                </div>
-
-                            </div>
-
-
-                        </div>
-
-
                     </div>
+
+
                 </div>
-                <!-- ******endtable************* -->
+
+                <div class="row">
+                    <div class="col-md-10">
+                        <p style="font-size: 17px;color:black">{{Commentaire.contenu}} </p>
+                    </div>
+
+                </div>
+
+
             </div>
-         
+
+
+        </div>
+    </div>
+    <!-- ******endtable************* -->
+</div>
