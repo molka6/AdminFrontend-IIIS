@@ -7,12 +7,13 @@ import { IlefServiceService } from '../ilef-service.service'
 })
 export class IlefServicesComponent implements OnInit {
   ServiceListe = [];
-
+  isDataLoading =true ; 
   constructor(private ilefServiceService: IlefServiceService) { }
 
   ngOnInit(): void {
 
-    this.ilefServiceService.getAllService().then((resp) => { this.ServiceListe = resp.data });
+    this.ilefServiceService.getAllService().then((resp) => { this.ServiceListe = resp.data ;
+      this.isDataLoading =false ; });
   }
 
   deleteService(id) {

@@ -14,9 +14,9 @@
       <div class="col-lg-12  stretch-card2 ">
         <div class="card2">
           <div class="card-body">
-             <h4 class="card-title2">Ajouter un Article</h4>
+             <h4 class="card-title2">Modifier Équipe</h4>
                   <!-- @@@@@@form@@@@@ -->
-                  <form [formGroup]="articleform" (submit)="update(nom,prenom,role,Email)"  class="well ">
+                  <form [formGroup]="articleform"   class="well ">
                   
 
                     <div class="row">
@@ -50,11 +50,46 @@
                       </div>
                       
                   </div>
+
+
+                  <div class="row">
+                    <div class="col-md-6 pr-1">
+                        <div class="form-group">
+                            <ng-container *ngIf=" Image != '' ">
+
+                                <label>Image </label><br>
+                                <img src="http://127.0.0.1:8000/upload/{{Image}}" width="200" height="200">
+
+
+                                <button type="button" class="btn btn-icons btn-rounded btn-secondary" 
+                                    routerlink="[`/UpdatePartenaire/${id}]"
+                                    (click)="supprimerLogo()">
+                                    <i class="fa fa-trash-o"></i>
+                                </button>
+
+
+
+                            </ng-container>
+
+
+                            <ng-container *ngIf=" Image  == '' ">
+                                <div class="form-group">
+                                    <input type="file" (change)="uploadFile($event)">
+                                </div>
+                            </ng-container>
+
+
+                        </div>
+                    </div>
+
+                </div>
   
+
+
                   <div class="row">
                     <div class="col-md-12">
                       <button type="button" class="btn btn-secondary btn-rounded btn-fw  btn-position" routerLink="/Equipe" >Cancel</button>
-                      <button  class="btn btn-danger btn-rounded btn-fw btn-position">Submit</button>
+                      <button  class="btn btn-danger btn-rounded btn-fw btn-position"  (click)="update($event)">Submit</button>
                       <!-- <button [disabled]="loading" class="btn btn-primary">
                         <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
                         Save

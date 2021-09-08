@@ -6,10 +6,11 @@ import axios from 'axios';
   providedIn: 'root'
 })
 export class OffreEmploiService {
-  private BaseUrl = 'https://localhost:8000/offreEmploi';
-  private baseUrl1 = 'https://localhost:8000/createoffreEmploi';
-  private BaseUrlOffre = 'https://localhost:8000/getOffre';
-  private BaseUrlUpdate = 'https://localhost:8000/UpdateoffreEmploi/';
+  private BaseUrl = 'http://localhost:8000/offreEmploi';
+  private baseUrl1 = 'http://localhost:8000/createoffreEmploi';
+  private BaseUrlOffre = 'http://localhost:8000/getOffre';
+  private BaseUrlUpdate = 'http://localhost:8000/UpdateoffreEmploi/';
+  private Urlcand='http://localhost:8000/api/offre_emplois' ; 
   constructor() { }
 
   createOffre(offre) {
@@ -36,6 +37,15 @@ export class OffreEmploiService {
 
   async deleteOffre(id) {
     return await axios.delete(this.BaseUrl + "/" + id)
+  }
+
+  
+  async getOffreCandidat(id) {
+    return await axios.get(this.Urlcand + "/" + id)
+  }
+
+  async getAllCandidat(base){
+    return await axios.get('http://localhost:8000'+base )
   }
 
 }

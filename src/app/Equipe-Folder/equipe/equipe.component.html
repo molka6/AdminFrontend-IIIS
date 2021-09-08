@@ -1,95 +1,74 @@
-<div class="content-wrapper">
 
-  <div class="row page-title-header ">
 
-    <div class="col-12">
-      <div class="page-header">
-        <h4 class="page-title ">EquipeIIS</h4>
-        <div class="quick-link-wrapper w-100 d-md-flex flex-md-wrap">
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- ************Table ************* -->
-  <div class="col-lg-12  stretch-card ">
-    <div class="card">
-      <div class="card-body">
-        <h4 class="card-title">Equipe :</h4>
-        <div class="row">
-          <div class="col-md-10">
+          
+          <div *ngIf="isDataLoading ">
+            <app-loading > </app-loading>
           </div>
-          <div class="col-md-2">
-
-            <button type="button" class="btn btn-inverse-danger btn-rounded btn-fw m1"
-              routerLink="/createEquipe">Ajouter</button>
-
-          </div>
-        </div>
-        <!-- <p class="card-description"> Add class <code>.table-striped</code> </p>  -->
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th> Nom</th>
-              <th> Prenom</th>
-              <th> Role </th>
-              <th> Email </th>
-              <th> Image </th>
-
-
-              <th rowspan="2">
-                <div class="position">Action </div>
-              </th>
-
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let e of equipe ">
-              <td class="py-1"> {{e.nom}} </td>
-              <td class="py-1"> {{e.prenom}} </td>
-              <td class="py-1" style="  padding: 25px;
+          <div class="content-wrapper" *ngIf=" !isDataLoading">  
+                <div class="row page-title-header ">
+                   <div class="col-12">
+                      <div class="page-header">
+                          <h4 class="page-title ">EquipeIIS</h4>
+                            <div class="quick-link-wrapper w-100 d-md-flex flex-md-wrap">
+                            </div>
+                      </div>
+                     </div>
+                </div>
+                <div class="col-lg-12  stretch-card ">
+                  <div class="card">
+                    <div class="card-body">
+                      <h4 class="card-title">Equipe :</h4>
+                    <div  class="row">
+                    <div  class="col-md-10">
+                    </div>
+                    <div  class="col-md-2">
+                    <button type="button" class="btn btn-inverse-danger btn-rounded btn-fw m1" routerLink="/createEquipe">Ajouter</button>
+                  </div>
+                    </div>
+                      <table class="table-striped">
+                        <thead>
+                          <tr>
+                            <th> Nom</th>
+                            <th> Prenom</th>
+                            <th> Role </th>
+                            <th> Email </th>
+                            <th> Image </th>
+                            <th> 
+                              Action
+                            </th>          
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr  *ngFor="let e of equipe ">
+                            <td class="py-1 description" >{{e.nom}} </td>
+                            <td class="py-1 description" >{{e.prenom}}  </td>
+                            <td class="py-1" style="padding: 25px;
                             overflow: hidden;
                             white-space: nowrap;
                             width: 100px;
-                           
-                            text-overflow: ellipsis; "> {{e.role}} </td>
-              <td class="py-1" style="  padding: 25px;
-              overflow: hidden;
-              white-space: nowrap;
-              width: 100px;
-             
-              text-overflow: ellipsis; "> {{e.Email}} </td>
-              <td class="py-1"> <img src="http://127.0.0.1:8000/upload/{{e.Image}}" width="500" height="500"></td>
-              <td class="py-2">
-
-
-                <button type="button" class="btn btn-icons btn-rounded btn-secondary" [routerLink]="[dynamicParameter]"
-                  (click)="deletePost(e.id)">
-                  <i class="fa fa-trash-o"></i>
-                </button>
-
-                <button type="button" class="btn btn-icons btn-rounded btn-secondary"
-                  routerLink="/UpdateEquipe/{{e.id}}">
-                  <i class="fa fa-edit"></i>
-                </button>
-
-
-
-
-                <!-- <button type="button" class="btn btn-outline-secondary btn-rounded btn-fw m"
-                              [routerLink]="[dynamicParameter]" (click)="deletePost(e.id)">Supprimer</button> -->
-
-                <!--     
-                              <button type="button" class="btn btn-outline-secondary btn-rounded btn-fw m" 
-                              routerLink="/UpdateEquipe/{{e.id}}"> Modifier </button>
-                              </td>  -->
-
-
-
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-  <!-- ******endtable************* -->
-</div>
+                            text-overflow: ellipsis; "> {{e.role}}  </td>
+                            <td class="py-1" > {{e.Email}}  </td>
+                            <td class="py-2">
+                              <ng-container *ngIf=" e.Image  != '' ">
+                                <img src="http://127.0.0.1:8000/upload/{{e.Image}}" width="60%" height="60%"> 
+                              </ng-container>
+                              <ng-container *ngIf=" e.Image == '' ">
+                                  <img src="../../../assets/images/user.png" width="60%" height="60%">  
+                              </ng-container>
+                            </td>
+                            <td class="py-2">
+                              <button   [routerLink]="[dynamicParameter]" (click)="deletePost(e.id)"   type="button" class="btn btn-icons btn-inverse-secondary widthbtn">
+                                <i class="fa fa-trash-o"></i>
+                              </button>
+                              <button  routerLink="/UpdateEquipe/{{e.id}}"  type="button" class="btn btn-icons btn-inverse-secondary widthbtn">
+                                <i class="fa fa-edit"></i>
+                              </button>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>  
+            </div>   
+          
