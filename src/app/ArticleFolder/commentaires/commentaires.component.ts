@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Http } from '@angular/http';
 import { ActivatedRoute } from '@angular/router';
 import { ArticleService } from '../article.service';
 
@@ -11,7 +12,7 @@ export class CommentairesComponent implements OnInit {
   Commentaires: [];
   Article: any;
 
-  constructor(private articleService: ArticleService, private route: ActivatedRoute) { }
+  constructor(private articleService: ArticleService, private route: ActivatedRoute, private http: Http,) { }
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get("id");
@@ -39,5 +40,40 @@ export class CommentairesComponent implements OnInit {
 
 
   }
+  publier(id) {
+    // const id2 = this.route.snapshot.paramMap.get("id");
+
+
+    this.articleService.updateAvis(id,
+
+      {
+
+        "publier": true
+      }
+    ).then(
+      (response) => console.log(response),
+      (error) => console.log(error)
+
+    )
+
+  }
+  cacher(id) {
+    // const id2 = this.route.snapshot.paramMap.get("id");
+
+
+    this.articleService.updateAvis(id,
+
+      {
+
+        "publier": false
+      }
+    ).then(
+      (response) => console.log(response),
+      (error) => console.log(error)
+
+    )
+
+  }
+
 }
 

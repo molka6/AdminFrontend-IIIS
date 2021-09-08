@@ -13,6 +13,7 @@ export class CreateServiceComponent implements OnInit {
 
     titre: new FormControl('', [Validators.required, Validators.minLength(3)]),
     description: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    pourcentage: new FormControl('', [Validators.required, Validators.minLength(3)]),
   });
   constructor(private ilefServiceService: IlefServiceService, private router: Router) { }
 
@@ -29,6 +30,7 @@ export class CreateServiceComponent implements OnInit {
       this.ilefServiceService.createService( {
         'title': this.formService.get('titre').value,
         'description': this.formService.get('description').value,
+        'pourcentage': this.formService.get('pourcentage').value,
       }  ).then(() => {
 
         console.warn("success");
