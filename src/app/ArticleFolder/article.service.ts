@@ -10,7 +10,7 @@ export class ArticleService {
   BaseUrlUpdate = 'http://localhost:8000/UpdateArticle/';
   BaseUrlArticle = 'http://localhost:8000/getArticle';
   UrlDelete = "http://localhost:8000/Article";
-  UrlComentaire = 'http://localhost:8000/Avis/';
+  UrlComentaire = 'http://localhost:8000/AllAvis/';
   UrlDeleteCommentaire = 'http://localhost:8000/Commentaire';
 
   constructor(private http: Http) { }

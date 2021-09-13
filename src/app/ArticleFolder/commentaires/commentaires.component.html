@@ -35,14 +35,31 @@
 
                         <div class="btn-group">
                             <button class="btn btn-inverse-danger btn-rounded btn-fw back"> publier </button>
-                            <button data-toggle="dropdown" class="dropdown-toggle"><span
-                                    class="caret"></span></button>
+                            <button data-toggle="dropdown" class="dropdown-toggle"><span class="caret"></span></button>
                             <ul class="dropdown-menu">
-                                <li><a (click)="publier(Commentaire.id)" >oui</a></li>
+                                <li><a (click)="publier(Commentaire.id)">oui</a></li>
                                 <li><a (click)="cacher(Commentaire.id)">non</a></li>
-                               
+
                             </ul>
                         </div>
+
+                        <div *ngIf="Commentaire.publier == '1'">
+                            <p> publier</p>
+                        </div>
+                        <div *ngIf="Commentaire.publier != '1' ">
+                            <p> non publier</p>
+                        </div>
+
+                        <!-- <div *ngIf="submitted && !publierarticle ">
+                            <p> publier</p>
+                         </div>
+                        <div *ngIf="submitted && publierarticle">
+                          <p> non publier</p>
+                        </div> -->
+
+
+
+
                     </div>
 
                 </div>

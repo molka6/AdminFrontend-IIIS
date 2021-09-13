@@ -11,16 +11,22 @@ import { ArticleService } from '../article.service';
 export class CommentairesComponent implements OnInit {
   Commentaires: [];
   Article: any;
-
+  publierarticle: true;
+  publierc: any;
+  var: boolean;
   constructor(private articleService: ArticleService, private route: ActivatedRoute, private http: Http,) { }
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get("id");
-    this.articleService.getCommentaires(id).then((resp) => { this.Commentaires = resp.data; console.log(this.Commentaires) })
+    this.articleService.getCommentaires(id).then((resp) => {
+      this.Commentaires = resp.data; console.log(this.Commentaires), this.publierc = resp.data[0].publier;
+
+    })
 
     const id2 = this.route.snapshot.paramMap.get("id");
     this.articleService.getOneArticle(id).then((resp) => {
       this.Article = resp.data; console.log(resp.data)
+
 
     });
 
@@ -50,7 +56,9 @@ export class CommentairesComponent implements OnInit {
 
         "publier": true
       }
+
     ).then(
+
       (response) => console.log(response),
       (error) => console.log(error)
 

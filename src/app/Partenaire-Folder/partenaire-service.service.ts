@@ -11,10 +11,10 @@ export class PartenaireServiceService {
   UrlPart = 'http://localhost:8000/Partenaire';
   UrlCreate = 'http://localhost:8000/createPartenaire';
   UrlOnePart = 'http://localhost:8000/getPartenaire';
-  UrlUpdate = 'http://localhost:8000/UpdatePartenaire/';
+  UrlUpdate = 'https://localhost:8000/UpdatePartenaire/';
   UrlDelete = 'http://localhost:8000/Partenaire';
-  Urldeltelogo='http://localhost:8000/PartenaireLogo/';
-  UrlImage='http://localhost:8000/image/';
+  Urldeltelogo = 'http://localhost:8000/PartenaireLogo/';
+  UrlImage = 'http://localhost:8000/image/';
 
   async getAllPartenaire() {
     return await axios.get(`${this.UrlPart}`);
@@ -35,6 +35,6 @@ export class PartenaireServiceService {
     return await axios.get(`${this.Urldeltelogo}` + id);
   }
   async getImage(id) {
-    return await axios.get(`${this.UrlImage}` +id );
+    return await axios.get(`${this.UrlImage}` + id);
   }
 }
