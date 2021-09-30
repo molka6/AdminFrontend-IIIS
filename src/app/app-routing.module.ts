@@ -28,14 +28,14 @@ import { MenuHeadComponent } from './menu-head-folder/menu-head/menu-head.compon
 import { CandidatureComponent } from  './OffreEmploi-Folder/candidature/candidature.component';
 
 import { LoadingComponent } from './loading/loading.component';
+import { Page404Component } from './404-Folder/page404/page404.component';
 
 const routes: Routes = [
 
 
   { path: '', 
-  // canActivate : [AuthGuardComponent ] , 
-  component:  MenuHeadComponent   , children : [
-    { path: 'Dashboard', component: DashboardComponent  },
+  component:  MenuHeadComponent   , canActivate : [AuthGuardComponent ] , children : [
+    { path: 'Dashboard', component: DashboardComponent },
     { path: 'OffreEmploi', component: OffreEmploiComponent },
     { path: 'OffreEmploi/:id', component: OffreEmploiComponent },
     { path: 'CreateOffreEmploi', component: CreateOffreComponent, },
@@ -51,7 +51,7 @@ const routes: Routes = [
     { path: 'Equipe', component: EquipeComponent, },
     { path: 'createEquipe', component: EquipeFormComponent, },
     { path: 'UpdateService/:id', component: UpdateServiceComponent, },
-    { path: 'Articles', component: ArticleComponent, },
+    { path: 'Articles', component: ArticleComponent,canActivate : [AuthGuardComponent ]  },
     { path: 'CreateArticle', component: CreateArticleComponent, },
     { path: 'createEquipe', component: EquipeFormComponent, },
     { path: 'membre', component: MembreComponent, },
@@ -61,12 +61,12 @@ const routes: Routes = [
     { path: 'listeCommentaire/:id', component: CommentairesComponent },
     { path: 'candidature/:id', component: CandidatureComponent},
     { path: 'Loading', component: LoadingComponent },
-
+    
 
 ]} ,
 
  { path: 'login', component: LoginComponent },
-  
+ { path: '**', component:Page404Component  },
   
   // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
  

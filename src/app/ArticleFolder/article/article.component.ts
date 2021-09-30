@@ -9,11 +9,14 @@ import { ArticleService } from '../article.service'
 export class ArticleComponent implements OnInit {
   Articles = [];
   visibleImages: any[] = [];
+  isDataLoading =true ;
   constructor(private articleService: ArticleService) { }
 
   ngOnInit(): void {
 
-    this.articleService.getAllArticles().then((resp) => { this.Articles = resp.data; console.log(this.Articles) });
+    this.articleService.getAllArticles().then((resp) => { this.Articles = resp.data; 
+      this.isDataLoading =false ; 
+      console.log(this.Articles) });
     
     this.articleService.getImages().subscribe(
       (res) => {

@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
           // redirect to home if already logged in
           if (this.authenticationService.currentUserValue)
            { 
-              this.router.navigate(['/Dashboard']);
+              this.router.navigate(['/Articles']);
            }         
     }
     
@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
     username: ['', Validators.required],
     password: ['', Validators.required]
 });
-    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/Dashboard';
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/Articles';
 
 
 
@@ -62,6 +62,8 @@ export class LoginComponent implements OnInit {
               this.loading = false;
             });
 }
+
+
 }
 
 

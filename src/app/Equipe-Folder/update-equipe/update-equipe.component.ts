@@ -63,22 +63,20 @@ export class UpdateEquipeComponent implements OnInit {
   }
 
 
-  elem;
-  uploadFile(event) {
-    this.elem = event.target;
-    console.log(this.elem.files[0]);
-    this.articleform.patchValue({
-      Image: this.elem.files[0]
-
-    });
-    this.articleform.get('Image').updateValueAndValidity()
-  }
-
-
+  
+  selectedFile ;
+  uploadFile(e) {
+    this.route.params.subscribe(params => {
+    this._updateService.getById(params['id']).subscribe(res => {
+      this.equi = res;
+      console.log(this.equi.Image)
+  });
+    this.selectedFile = e && e.target.files.length > 0 ? e.target.files[0] : e.target.files[0] = this.equi.Image; 
+  })}
   update(e) {
     const id = this.route.snapshot.paramMap.get("id");
     var formData: any = new FormData();
-        formData.append("file", this.elem.files[0]);
+        formData.append("file", this.selectedFile);
         formData.append("nom", this.articleform.get('nom').value);
         formData.append("prenom",this.articleform.get('prenom').value );
         formData.append("role",this.articleform.get('role').value);

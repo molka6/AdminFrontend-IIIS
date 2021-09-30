@@ -590,7 +590,6 @@ pre {
 .container-lg,
 .container-xl {
   width: 100%;
-  
   padding-right: 12.5px;
   padding-left: 12.5px;
   margin-right: auto;
@@ -9855,4 +9854,6 @@ ul {
     .error-page .error-page-divider {
       border-left: 3px solid rgba(255, 255, 255, 0.2); } }
 
-    
+/*-------------------------------------------------------------------*/
+
+/*# sourceMappingURL=style.css.map */

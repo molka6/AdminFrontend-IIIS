@@ -18,67 +18,75 @@ export class UpdateArticleComponent implements OnInit {
     image: new FormControl('', [Validators.required]),
   });
   Article: any;
+  image: any
   constructor(private http: Http, private articleService: ArticleService, private route: ActivatedRoute, private router: Router) { }
-
   ngOnInit(): void {
-
     const id = this.route.snapshot.paramMap.get("id");
     this.articleService.getOneArticle(id).then((resp) => {
       this.Article = resp.data; 
-      // console.log(resp.data)
-
       this.formArticle.controls['title'].setValue(this.Article.title);
+      console.log(this.formArticle.controls['title'].setValue(this.Article.title)) ;
       this.formArticle.controls['DateAjout'].setValue(this.Article.DateAjout);
       this.formArticle.controls['description'].setValue(this.Article.description);
-      // this.formArticle.controls['image'].setValue(this.Article.image);
+      this.image = this.Article.image;
     });
   }
 
 
-  elem;
-  uploadFile(event) {
-    this.elem = event.target;
-    console.log(this.elem.files[0]);
-    this.formArticle.patchValue({
-      image: this.elem.files[0]
+  // elem;
+  // uploadFile(event) {
+  //   this.elem = event.target;
+  //   console.log(this.elem.files[0]);
+  //   this.formArticle.patchValue({
+  //     image: this.elem.files[0]
+  //   });
+  //   this.formArticle.get('image').updateValueAndValidity()
+  // }
 
-    });
-    this.formArticle.get('image').updateValueAndValidity()
+  
+
+  selectedFile ;
+  uploadFile(e) {
+    const id = this.route.snapshot.paramMap.get("id");
+    this.articleService.getOneArticle(id).then((resp) =>{
+    this.Article = resp.data; 
+    console.log(this.Article)
+     } );
+    this.selectedFile = e && e.target.files.length > 0 ? e.target.files[0] : e.target.files[0] =this.Article.image; 
   }
+
 
 
 
   UpdateArticle(e) {
     const id = this.route.snapshot.paramMap.get("id");
+    alert(id)
     console.log(this.formArticle.value)
     var formData: any = new FormData();
-    formData.append("file", this.elem.files[0]);
+    formData.append("file",  this.selectedFile );
     formData.append("title", this.formArticle.get('title').value);
+    console.log(this.formArticle.get('title').value)
     formData.append("DateAjout", this.formArticle.get('DateAjout').value);
-    console.log( this.elem.files[0])
+    console.log( this.formArticle.get('description').value)
     formData.append("description", this.formArticle.get('description').value);
-    this.http.put('http://127.0.0.1:8000/UpdateArticle/'+id , formData).subscribe(
+    this.http.post('http://127.0.0.1:8000/UpdateArticle/'+id , formData).subscribe(
       (response) => console.log(response),
       (error) => console.log(error)
-      
     )
-    
+    this.router.navigate(['/Articles']);
   }
+
+
+
+  supprimerLogo() {
+    const id = this.route.snapshot.paramMap.get("id");
+    alert(id)
+    this.articleService.DeleteLogo(id).then(() => {
+      console.log("succes");
+      window.location.reload();
+    })
+  }
+
+
     
 }
-
-
-// his.articleService.updateArticle(id, {
-//   'title': this.formArticle.get('title').value,
-//   'description': this.formArticle.get('description').value,
-//   'DateAjout': this.formArticle.get('dateAjout').value,
-//   'image': this.formArticle.get('image').value,
-
-
-// }).then(() => {
-
-//   console.warn("success");
-//   this.router.navigate(['/Articles']);
-
-// })
-// }

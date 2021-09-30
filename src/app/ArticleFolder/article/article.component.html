@@ -1,5 +1,10 @@
 
-            <div class="content-wrapper">
+       
+       <div *ngIf="isDataLoading ">
+        <app-loading > </app-loading>
+      </div>
+            <div class="content-wrapper" *ngIf=" !isDataLoading" >
+     
                 <div class="row page-title-header margi">
                     <div class="col-12">
                         <div class="page-header">
@@ -40,12 +45,12 @@
                                         width: 100px;
                                         text-overflow: ellipsis; "> {{ Article.description}} </td>
                                         <td class="py-1"> {{ Article.DateAjout}}</td>
-                                        <td class="py-1">  <img src="http://127.0.0.1:8000/upload/{{Article.image}}" width="500" height="500"></td> 
+                                        <td class="py-1">  <img src="http://127.0.0.1:8000/upload/{{Article.image}}" width="60%" height="60%"></td> 
                                         <td class="py-2">                    
                       <button   (click)="deleteArticle(Article.id ,$event)"    style=" width: 50px ;"type="button" class="btn btn-icons btn-inverse-secondary">
                         <i class="fa fa-trash-o"></i>
                       </button>
-                      <button routerLink="/UpdateArticle/{{Article.id}} "   style=" width: 50px ;"type="button" class="btn btn-icons btn-inverse-secondary">
+                      <button routerLink="/UpdateArticle/{{Article.id}}"   style=" width: 50px ;"type="button" class="btn btn-icons btn-inverse-secondary">
                         <i class="fa fa-edit"></i>
                       </button>
                       <button  routerLink="/listeCommentaire/{{Article.id}}"   style=" width: 50px ;"type="button" class="btn btn-icons btn-inverse-secondary">

@@ -9,6 +9,9 @@ import { OffreEmploiService } from '../offre-emploi.service';
   styleUrls: ['./create-offre.component.css']
 })
 export class CreateOffreComponent implements OnInit {
+  isDataLoading =true ;
+
+
   formOffre = new FormGroup({
 
     titre: new FormControl('', [Validators.required, Validators.minLength(3)]),
@@ -37,6 +40,7 @@ export class CreateOffreComponent implements OnInit {
       }).then(() => {
 
         console.warn("success");
+        this.isDataLoading =false ;  
         this.router.navigate(['/OffreEmploi']);
 
       })

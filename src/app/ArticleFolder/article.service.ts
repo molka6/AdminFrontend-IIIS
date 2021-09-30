@@ -12,7 +12,7 @@ export class ArticleService {
   UrlDelete = "http://localhost:8000/Article";
   UrlComentaire = 'http://localhost:8000/Avis/';
   UrlDeleteCommentaire = 'http://localhost:8000/Commentaire';
-
+  Urldeltelogo='http://localhost:8000/ImageArticle/';
   constructor(private http: Http) { }
 
   async getAllArticles() {
@@ -64,18 +64,18 @@ export class ArticleService {
     return this.http.get('http://127.0.0.1:8000/images').map((res) => res.json());
   }
 
+  async DeleteLogo(id) {
+    return await axios.get(`${this.Urldeltelogo}` + id);
+  }
+
+
   async updateAvis(id, data) {
-
-
-    axios.defaults.baseURL = 'https://127.0.0.1:8000/';
+    axios.defaults.baseURL = 'http://127.0.0.1:8000/';
     return await axios.patch(`api/avis/` + id, data, {
       data: {
         'Content-Type': 'application/merge-patch+json'
-
       }
-
     })
-
   }
 
 }
